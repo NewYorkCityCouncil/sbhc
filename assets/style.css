@@ -1,0 +1,23 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+
+body{
+  font-family: "Open Sans", sans-serif;
+} */
+
+body{
+  font-family: "Times New Roman", serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: Georgia, serif;
+}
+
+#header {
+  background-image: url(data-council-logo.png);
+  background-size: 50%;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.title {
+  width: 50%;
+}
