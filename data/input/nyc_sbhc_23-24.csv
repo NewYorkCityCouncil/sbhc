@@ -1,0 +1,402 @@
+﻿Borough,District,Campus Name,BLDG,Address,Room,DBN,School Name,SBHC Sponsor
+Manhattan,1,PS 64 Campus,M064,"600 East 6 Street, Manhattan, NY, 10009",128,01M839,Tompkins Square Middle School,Ryan Health
+Manhattan,1,PS 64 Campus,M064,"600 East 6 Street, Manhattan, NY, 10009",128,01M364,Earth School,Ryan Health
+Manhattan,1,PS 64 Campus,M064,"600 East 6 Street, Manhattan, NY, 10009",128,01M064,P.S. 064 Robert Simon,Ryan Health
+Manhattan,1,The Island School Campus,M188,"442 East Houston Street, Manhattan, NY, 10002",219,01M188,P.S. 188 The Island School,Ryan Health
+Manhattan,2,Bayard Rustin Educational Complex (Humanities),M440,"351 West 18 Street, Manhattan, NY, 10011",610,02M422,Quest To Learn,Mount Sinai - Adolescent Health Center
+Manhattan,2,Bayard Rustin Educational Complex (Humanities),M440,"351 West 18 Street, Manhattan, NY, 10011",610,02M392,Manhattan Business Academy,Mount Sinai - Adolescent Health Center
+Manhattan,2,Bayard Rustin Educational Complex (Humanities),M440,"351 West 18 Street, Manhattan, NY, 10011",610,02M419,Landmark High School,Mount Sinai - Adolescent Health Center
+Manhattan,2,Bayard Rustin Educational Complex (Humanities),M440,"351 West 18 Street, Manhattan, NY, 10011",610,02M605,Humanities Preparatory Academy,Mount Sinai - Adolescent Health Center
+Manhattan,2,Bayard Rustin Educational Complex (Humanities),M440,"351 West 18 Street, Manhattan, NY, 10011",610,02M437,Hudson High School Of Learning Technologies,Mount Sinai - Adolescent Health Center
+Manhattan,2,Bayard Rustin Educational Complex (Humanities),M440,"351 West 18 Street, Manhattan, NY, 10011",610,02M313,"James Baldwin School, The: A School For Expeditionary Learning",Mount Sinai - Adolescent Health Center
+Manhattan,2,High School of Fashion Industries,M600,"225 West 24 Street, Manhattan, NY, 10011",343,02M600,The High School Of Fashion Industries,Institute for Family Health
+Manhattan,2,Julia Richman Campus,M480,"317 East 67 Street, Manhattan, NY, 10065",152,02M519,Talent Unlimited High School,Mount Sinai - Adolescent Health Center
+Manhattan,2,Julia Richman Campus,M480,"317 East 67 Street, Manhattan, NY, 10065",152,02M449,Vanguard High School,Mount Sinai - Adolescent Health Center
+Manhattan,2,Julia Richman Campus,M480,"317 East 67 Street, Manhattan, NY, 10065",152,02M459,Manhattan International High School,Mount Sinai - Adolescent Health Center
+Manhattan,2,Julia Richman Campus,M480,"317 East 67 Street, Manhattan, NY, 10065",152,02M565,Urban Academy Laboratory High School,Mount Sinai - Adolescent Health Center
+Manhattan,2,Julia Richman Campus,M480,"317 East 67 Street, Manhattan, NY, 10065",152,02M225,Ella Baker School,Mount Sinai - Adolescent Health Center
+Manhattan,2,Julia Richman Campus,M480,"317 East 67 Street, Manhattan, NY, 10065",152,79M984#M480,Lyfe,Mount Sinai - Adolescent Health Center
+Manhattan,2,Murry Bergtraum HS for Business Careers,M520,"411 Pearl Street, Manhattan, NY, 10038",500,02M282,Urban Assembly Maker Academy,Institute for Family Health
+Manhattan,2,Murry Bergtraum HS for Business Careers,M520,"411 Pearl Street, Manhattan, NY, 10038",500,02M280,Manhattan Early College School For Advertising,Institute for Family Health
+Manhattan,2,Murry Bergtraum HS for Business Careers,M520,"411 Pearl Street, Manhattan, NY, 10038",500,02M135,The Urban Assembly School For Emergency Management,Institute for Family Health
+Manhattan,2,Murry Bergtraum HS for Business Careers,M520,"411 Pearl Street, Manhattan, NY, 10038",500,02M520,Murry Bergtraum High School For Business Careers,Institute for Family Health
+Manhattan,2,Park West Campus,M535,"525 West 50 Street, Manhattan, NY, 10019",551,02M542,Manhattan Bridges High School,Ryan Health
+Manhattan,2,Park West Campus,M535,"525 West 50 Street, Manhattan, NY, 10019",551,02M288,Food And Finance High School,Ryan Health
+Manhattan,2,Park West Campus,M535,"525 West 50 Street, Manhattan, NY, 10019",551,02M303,"Facing History School, The",Ryan Health
+Manhattan,2,Park West Campus,M535,"525 West 50 Street, Manhattan, NY, 10019",551,02M300,The Urban Assembly School Of Design And Construction,Ryan Health
+Manhattan,2,Park West Campus,M535,"525 West 50 Street, Manhattan, NY, 10019",551,02M296,High School Of Hospitality Management,Ryan Health
+Manhattan,2,PS 011 William T Harris,M011,"320 West 21 Street, Manhattan, NY, 10011",320,02M011,P.S. 011: The Sarah J. Garnet Elementary School,Ryan Health
+Manhattan,2,Seward Park Campus,M445,"350 Grand Street, Manhattan, NY, 10002",240,02M543,New Design High School,Community Healthcare Network
+Manhattan,2,Seward Park Campus,M445,"350 Grand Street, Manhattan, NY, 10002",240,02M545,High School For Dual Language And Asian Studies,Community Healthcare Network
+Manhattan,2,Seward Park Campus,M445,"350 Grand Street, Manhattan, NY, 10002",240,02M294,Essex Street Academy,Community Healthcare Network
+Manhattan,2,Seward Park Campus,M445,"350 Grand Street, Manhattan, NY, 10002",240,02M308,Lower Manhattan Arts Academy,Community Healthcare Network
+Manhattan,2,Seward Park Campus,M445,"350 Grand Street, Manhattan, NY, 10002",240,02M305,The Urban Assembly Academy Of Government And Law,Community Healthcare Network
+Manhattan,2,Washington Irving Campus,M460,"40 Irving Place, Manhattan, NY, 10003",111,02M374,Gramercy Arts High School,Institute for Family Health
+Manhattan,2,Washington Irving Campus,M460,"40 Irving Place, Manhattan, NY, 10003",111,02M533,Union Square Academy For Health Sciences,Institute for Family Health
+Manhattan,2,Washington Irving Campus,M460,"40 Irving Place, Manhattan, NY, 10003",111,02M546,Academy For Software Engineering,Institute for Family Health
+Manhattan,2,Washington Irving Campus,M460,"40 Irving Place, Manhattan, NY, 10003",111,02M438,International High School At Union Square,Institute for Family Health
+Manhattan,2,Washington Irving Campus,M460,"40 Irving Place, Manhattan, NY, 10003",111,02M399,The High School For Language And Diplomacy,Institute for Family Health
+Manhattan,2,Washington Irving Campus,M460,"40 Irving Place, Manhattan, NY, 10003",111,79M379#M460,Yabc,Institute for Family Health
+Manhattan,3,JHS 054 Booker T Washington,M054,"103 West 107 Street, Manhattan, NY, 10025",113,03M054,J.H.S. 054 Booker T. Washington,Ryan Health
+Manhattan,3,Louis D Brandeis Campus,M470,"145 West 84 Street, Manhattan, NY, 10024",115,03M417,Frank Mccourt High School,Mount Sinai - Adolescent Health Center
+Manhattan,3,Louis D Brandeis Campus,M470,"145 West 84 Street, Manhattan, NY, 10024",115,03M403,The Global Learning Collaborative,Mount Sinai - Adolescent Health Center
+Manhattan,3,Louis D Brandeis Campus,M470,"145 West 84 Street, Manhattan, NY, 10024",115,03M402,The Urban Assembly School For Green Careers,Mount Sinai - Adolescent Health Center
+Manhattan,3,Louis D Brandeis Campus,M470,"145 West 84 Street, Manhattan, NY, 10024",115,03M404,Innovation Diploma Plus,Mount Sinai - Adolescent Health Center
+Manhattan,3,Louis D Brandeis Campus,M470,"145 West 84 Street, Manhattan, NY, 10024",115,79M984#M470,Lyfe,Mount Sinai - Adolescent Health Center
+Manhattan,3,Martin Luther King Jr Educational Campus,M490,"122 Amsterdam Avenue, Manhattan, NY, 10023",203,03M492,"High School For Law, Advocacy And Community Justice",Mount Sinai - Adolescent Health Center
+Manhattan,3,Martin Luther King Jr Educational Campus,M490,"122 Amsterdam Avenue, Manhattan, NY, 10023",203,03M541,Manhattan / Hunter Science High School,Mount Sinai - Adolescent Health Center
+Manhattan,3,Martin Luther King Jr Educational Campus,M490,"122 Amsterdam Avenue, Manhattan, NY, 10023",203,03M494,High School Of Arts And Technology,Mount Sinai - Adolescent Health Center
+Manhattan,3,Martin Luther King Jr Educational Campus,M490,"122 Amsterdam Avenue, Manhattan, NY, 10023",203,03M307,The Urban Assembly School For Media Studies,Mount Sinai - Adolescent Health Center
+Manhattan,3,Martin Luther King Jr Educational Campus,M490,"122 Amsterdam Avenue, Manhattan, NY, 10023",203,03M859,Special Music School,Mount Sinai - Adolescent Health Center
+Manhattan,3,Martin Luther King Jr Educational Campus,M490,"122 Amsterdam Avenue, Manhattan, NY, 10023",203,03M299,The Maxine Greene HS For Imaginative Inquiry,Mount Sinai - Adolescent Health Center
+Manhattan,3,PS 180 Hugo Newman,M180,"370 West 120 Street, Manhattan, NY, 10027",105,03M180,P.S. 180 Hugo Newman,Ryan Health
+Manhattan,3,Young Womens Leadership School,M506,"140 West 102 Street, Manhattan, NY, 10025",B8,03M610,Young Women's Leadership School,Ryan Health
+Manhattan,3,Young Womens Leadership School,M506,"140 West 102 Street, Manhattan, NY, 10025",B8,79Q950#M506,Pathways To Graduation,Ryan Health
+Manhattan,3,Young Womens Leadership School,M506,"140 West 102 Street, Manhattan, NY, 10025",B8,79M984#M506,Lyfe,Ryan Health
+Manhattan,4,IS 45 Campus,M045,"2351 1 Avenue, Manhattan, NY, 10035",101,84M335,Harlem Village Academy East Charter School,Mount Sinai Pediatrics
+Manhattan,4,IS 45 Campus,M045,"2351 1 Avenue, Manhattan, NY, 10035",101,04M037,River East Elementary,Mount Sinai Pediatrics
+Manhattan,4,James Weldon Johnson,M057,"176 East 115 Street, Manhattan, NY, 10029",122,04M057,James Weldon Johnson,Institute for Family Health
+Manhattan,4,Manhattan Center Campus,M435,"260 Pleasant Avenue, Manhattan, NY, 10029",B16,04M435,Manhattan Center For Science And Mathematics,Mount Sinai - Adolescent Health Center
+Manhattan,4,Manhattan Center Campus,M435,"260 Pleasant Avenue, Manhattan, NY, 10029",B16,04M825,Isaac Newton Middle School For Math & Science,Mount Sinai - Adolescent Health Center
+Manhattan,4,PS 007 Samuel Stern Campus,M007,"160 East 120 Street, Manhattan, NY, 10035",117,04M007,P.S. 007 Samuel Stern,East Harlem Council For Human Services/Boriken Neighborhood Health Center
+Manhattan,4,PS 108 Assemblyman Angelo Del Toro Educational Complex,M108,"1615 Madison Avenue, Manhattan, NY, 10029",113,04M108,P.S. 108 Assemblyman Angelo Del Toro Educational Complex,Mount Sinai Pediatrics
+Manhattan,4,PS 108 Assemblyman Angelo Del Toro Educational Complex,M108,"1615 Madison Avenue, Manhattan, NY, 10029",113,M138@04M108,P138M@P108M,Mount Sinai Pediatrics
+Manhattan,4,PS 112 Jose Celso Barbosa,M112,"535 East 119 Street, Manhattan, NY, 10035",113,04M112,P.S. 112 Jose Celso Barbosa,East Harlem Council For Human Services/Boriken Neighborhood Health Center
+Manhattan,4,PS 112 Jose Celso Barbosa,M112,"535 East 119 Street, Manhattan, NY, 10035",113,04M206,P.S. 206 Jose Celso Barbosa,East Harlem Council For Human Services/Boriken Neighborhood Health Center
+Manhattan,4,PS 155 William Paca,M155,"319 East 117 Street, Manhattan, NY, 10035",118,04M155,P.S. 155 William Paca,East Harlem Council For Human Services/Boriken Neighborhood Health Center
+Manhattan,4,PS 155 William Paca,M155,"319 East 117 Street, Manhattan, NY, 10035",118,04M377,Renaissance School Of The Arts,East Harlem Council For Human Services/Boriken Neighborhood Health Center
+Manhattan,4,PS 38 Roberto Clemente Campus,M121,"232 East 103 Street,Manhattan, NY, 10029",156,04M038,P.S. 38 Roberto Clemente,Mount Sinai Pediatrics
+Manhattan,4,PS 38 Roberto Clemente Campus,M121,"232 East 103 Street,Manhattan, NY, 10029",156,84M708,Harlem Prep Charter School,Mount Sinai Pediatrics
+Manhattan,4,PS 83/BBMS Campus,M083,"219 East 109 Street, Manhattan, NY, 10029",111,04M083,P.S. 083 Luis Munoz Rivera,Mount Sinai Pediatrics
+Manhattan,4,PS 83/BBMS Campus,M083,"219 East 109 Street, Manhattan, NY, 10029",111,04M182,The Bilingual Bicultural School,Mount Sinai Pediatrics
+Manhattan,4,Tito Puente Educational Campus (TPEC),M117,"240 East 109 Street, Manhattan, NY, 10029",107,04M012,Tag Young Scholars,Mount Sinai Pediatrics
+Manhattan,4,Tito Puente Educational Campus (TPEC),M117,"240 East 109 Street, Manhattan, NY, 10029",107,04M372,Esperanza Preparatory Academy,Mount Sinai Pediatrics
+Manhattan,5,Percy Ellis Sutton Educational Campus,M136,"6 Edgecombe Avenue, Manhattan, NY, 10030",119,05M304,Mott Hall High School,New York-Presbyterian
+Manhattan,5,Percy Ellis Sutton Educational Campus,M136,"6 Edgecombe Avenue, Manhattan, NY, 10030",119,05M148,Eagle Academy For Young Men Of Harlem,New York-Presbyterian
+Manhattan,5,Thurgood Marshall Academy,M970,"200 West 135 Street, Manhattan, NY, 10030",B-007,05M670,Thurgood Marshall Academy For Learning And Social Change,New York-Presbyterian
+Manhattan,6,A Phillip Randolph Campus High School,M540,"443 West 135 Street, Manhattan, NY, 10031",617,06M540,A. Philip Randolph Campus High School,Mount Sinai - Adolescent Health Center
+Manhattan,6,Community Health Academy of the Heights,M814,"504 West 158 Street, Manhattan, NY, 10032",507,06M346,Community Health Academy Of The Heights,Community Healthcare Network
+Manhattan,6,Edward W. Stitt Campus,M164,"401 West 164 Street, Manhattan, NY, 10032",313,06M223,The Mott Hall School,New York-Presbyterian
+Manhattan,6,Edward W. Stitt Campus,M164,"401 West 164 Street, Manhattan, NY, 10032",313,06M328,Community Math & Science Prep,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,06M468,High School For Health Careers And Sciences,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,06M467,High School For Law And Public Service,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,06M462,The College Academy,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,06M463,High School For Media And Communications,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,79M973#M465,Restart Academy @ George Washington Educational Campus,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,79Q950#M465,Pathways To Graduation,New York-Presbyterian
+Manhattan,6,George Washington Educational Campus,M465,"549 Audubon Avenue, Manhattan, NY, 10040",118,79M379#M465,George Washington Yabc,New York-Presbyterian
+Manhattan,6,IS 143 Campus,M143,"511 West 182 Street, Manhattan, NY, 10033",101,06M348,Washington Heights Expeditionary Learning School,New York-Presbyterian
+Manhattan,6,IS 143 Campus,M143,"511 West 182 Street, Manhattan, NY, 10033",101,06M143,J.H.S. 143 Eleanor Roosevelt,New York-Presbyterian
+Manhattan,6,JHS 52 Inwood Campus,M052,"650 Academy Street, Manhattan, NY, 10034",229,06M211,Inwood Early College For Health And Information Technologies,New York-Presbyterian
+Manhattan,6,JHS 52 Inwood Campus,M052,"650 Academy Street, Manhattan, NY, 10034",229,06M423,High School For Excellence And Innovation,New York-Presbyterian
+Manhattan,6,JHS 52 Inwood Campus,M052,"650 Academy Street, Manhattan, NY, 10034",229,06M052,Harold O. Levy School,New York-Presbyterian
+Manhattan,6,Mirabal Sisters Campus,M090,"21 Jumel Place, Manhattan, NY, 10032",A127,84M068,Kipp Nyc Washington Heights Academy Charter School,Children's Aid Society
+Manhattan,6,Mirabal Sisters Campus,M090,"21 Jumel Place, Manhattan, NY, 10032",A127,06M319,M.S. 319 - Maria Teresa,Children's Aid Society
+Manhattan,6,Mirabal Sisters Campus,M090,"21 Jumel Place, Manhattan, NY, 10032",A127,06M324,M.S. 324 - Patria Mirabal,Children's Aid Society
+Manhattan,6,PS 5,M005,"3703 10 Avenue, Manhattan, NY, 10034",115,06M005,P.S. 005 Ellen Lurie,Children's Aid Society
+Manhattan,6,PS 8,M008,"465 West 167 Street, Manhattan, NY, 10032",112,06M008,P.S. 008 Luis Belliard,Children's Aid Society
+Manhattan,6,Salome Urena Campus,M218,"4600 Broadway,Manhattan, NY, 10040",132,06M293,City College Academy Of The Arts,Children's Aid Society
+Manhattan,6,Salome Urena Campus,M218,"4600 Broadway,Manhattan, NY, 10040",132,06M322,Middle School 322,Children's Aid Society
+Manhattan,N/A,HCZ Promise Academy I,M908,"245 West 129 Street, Manhattan, NY, 10027",111,84M284,Harlem Children's Zone Promise Academy Charter School,Institute for Family Health
+Manhattan,N/A,HCZ Promise Academy II,MANO,"35 East 125 Street, Manhattan, NY, 10035",501,84M341,Harlem Children's Zone Promise Academy II Charter School,Institute for Family Health
+Bronx,7,Health Opportunities Campus,X884,"350 Gerard Avenue, Bronx, NY, 10451",361,07X427,Community School For Social Justice,Morris Heights Health Center
+Bronx,7,Health Opportunities Campus,X884,"350 Gerard Avenue, Bronx, NY, 10451",361,07X670,Health Opportunities High School,Morris Heights Health Center
+Bronx,7,International Community High School,X139,"345 Brook Avenue, Bronx, NY, 10454",105,07X334,International Community High School,Morris Heights Health Center
+Bronx,7,International Community High School,X139,"345 Brook Avenue, Bronx, NY, 10454",105,07X343,Academy Of Applied Mathematics And Technology,Morris Heights Health Center
+Bronx,7,International Community High School,X139,"345 Brook Avenue, Bronx, NY, 10454",105,07X224,P.S./I.S. 224,Morris Heights Health Center
+Bronx,7,IS 162 Campus,X162,"600 Saint Anns Avenue, Bronx, NY, 10455",110,07X500,Hostos-Lincoln Academy Of Science,Morris Heights Health Center
+Bronx,7,IS 162 Campus,X162,"600 Saint Anns Avenue, Bronx, NY, 10455",110,84X393,University Prep Charter High School,Morris Heights Health Center
+Bronx,7,IS 162 Campus,X162,"600 Saint Anns Avenue, Bronx, NY, 10455",110,07X584,I.S. 584,Morris Heights Health Center
+Bronx,7,JHS 151,X151,"250 East 156 Street, Bronx, NY, 10451",170,07X031,P.S./M.S. 031 The William Lloyd Garrison,Montefiore Medical Center
+Bronx,7,JHS 151,X151,"250 East 156 Street, Bronx, NY, 10451",170,84X704,Kipp Academy Charter School,Montefiore Medical Center
+Bronx,7,Mott Haven Educational Campus,X790,"730 Concourse Village West, Bronx, NY, 10451",C-29,84X704,Kipp Academy Charter School,Montefiore Medical Center
+Bronx,7,Mott Haven Educational Campus,X790,"730 Concourse Village West, Bronx, NY, 10451",C-29,07X548,Careers In Sports High School,Montefiore Medical Center
+Bronx,7,Mott Haven Educational Campus,X790,"730 Concourse Village West, Bronx, NY, 10451",C-29,07X527,Bronx Leadership Academy II High School,Montefiore Medical Center
+Bronx,7,Mott Haven Educational Campus,X790,"730 Concourse Village West, Bronx, NY, 10451",C-29,84X581,South Bronx Community Charter High School,Montefiore Medical Center
+Bronx,7,Mott Haven Educational Campus,X790,"730 Concourse Village West, Bronx, NY, 10451",C-29,07X625,Bronx Legacy High School,Montefiore Medical Center
+Bronx,7,PS 018 John Peter Zenger,X018,"502 Morris Avenue, Bronx, NY, 10451",117,07X018,P.S. 018 John Peter Zenger,Montefiore Medical Center
+Bronx,7,PS 161 Ponce De Leon [Temporarily Closed],X161,"628 Tinton Avenue, Bronx, NY, 10455",124,07X161,P.S. 161 Juan Ponce De Leon School,Urban Health Plan
+Bronx,7,PS 161 Ponce De Leon [Temporarily Closed],X161,"628 Tinton Avenue, Bronx, NY, 10455",124,07X642,South Bronx Literacy Academy,Urban Health Plan
+Bronx,7,PS/MS 029 Melrose School,X029,"758 Courtlandt Avenue, Bronx, NY, 10451",133,07X029,P.S./M.S. 029 Melrose School,Morris Heights Health Center
+Bronx,7,South Bronx Educational Campus,X470,"701 Saint Anns Avenue, Bronx, NY, 10455",306,07X495,University Heights Secondary School,Montefiore Medical Center
+Bronx,7,South Bronx Educational Campus,X470,"701 Saint Anns Avenue, Bronx, NY, 10455",306,07X473,Mott Haven Village Preparatory High School,Montefiore Medical Center
+Bronx,7,South Bronx Educational Campus,X470,"701 Saint Anns Avenue, Bronx, NY, 10455",306,79M984#X470,Lyfe,Montefiore Medical Center
+Bronx,8,333/335 Campus [SBHC Temporary Closed],X060,"888 Rev James A Polite Avenue, Bronx, NY,10459",316,08X333,The Longwood Academy Of Discovery,Urban Health Plan
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,08X561,Bronx Compass High School,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,08X376,Antonia Pantoja Preparatory Academy: A College Board School,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,08X432,Bronx Bridges High School,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,08X312,Millennium Art Academy,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,08X452,Gotham Collaborative High School,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,08X377,Bronx Community High School,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,79Q950#X450,P2G @ Adlai E. Stevenson HS,Montefiore Medical Center
+Bronx,8,Adlai E Stevenson Educational Campus,X450,"1980 Lafayette Avenue, Bronx, NY, 10473",273,79M379#X450,Stevenson Yabc,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,08X405,Herbert H. Lehman High School,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,08X293,Renaissance High School For Musical Theater And The Arts,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,08X558,Westchester Square Academy,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,08X349,Bronx River High School,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,08X348,Schuylerville Preparatory High School,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,08X320,Pelham Lab High School,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,79Q950#X405,P2G @ Lehman HS,Montefiore Medical Center
+Bronx,8,Herbert H. Lehman Campus,X405,"3000 East Tremont Avenue, Bronx, NY, 10461",B34,79M379#X405,Yabc,Montefiore Medical Center
+Bronx,8,Hunts Point Campus,X074,"730 Bryant Avenue, Bronx, NY, 10474",249,84X345,Leaders In Our Neighborhood Charter School,Urban Health Plan
+Bronx,8,Hunts Point Campus,X074,"730 Bryant Avenue, Bronx, NY, 10474",249,08X424,Bronx Academy For Multi-Media,Urban Health Plan
+Bronx,8,IS 174 Campus,X174,"456 White Plains Road, Bronx, NY, 10473",106 A,08X367,"Archimedes Academy For Math, Science And Technology Applications",Montefiore Medical Center
+Bronx,8,IS 174 Campus,X174,"456 White Plains Road, Bronx, NY, 10473",106 A,08X282,Women's Academy Of Excellence,Montefiore Medical Center
+Bronx,8,IS 174 Campus,X174,"456 White Plains Road, Bronx, NY, 10473",106 A,08X375,The Bronx Mathematics Preparatory School,Montefiore Medical Center
+Bronx,8,James M. Kieran,X123,"1025 Morrison Avenue, Bronx, NY, 10472",142,08X123,J.H.S. 123 James M. Kieran,Institute for Family Health
+Bronx,8,James M. Kieran,X123,"1025 Morrison Avenue, Bronx, NY, 10472",142,08X337,The School For Inquiry And Social Justice,Institute for Family Health
+Bronx,8,Longwood Campus,X039,"965 Longwood Avenue, Bronx, NY, 10459",B10,84X380,Success Academy Charter School - Bronx 3,Morris Heights Health Center
+Bronx,8,Longwood Campus,X039,"965 Longwood Avenue, Bronx, NY, 10459",B10,08X530,Longwood Preparatory Academy,Morris Heights Health Center
+Bronx,8,Longwood Campus,X039,"965 Longwood Avenue, Bronx, NY, 10459",B10,79M645#X039,Coop Tech,Morris Heights Health Center
+Bronx,8,PS 048 Joseph R Drake [SBHC Temporarily Closed],X048,"1290 Spofford Avenue, Bronx, NY, 10474",1st floor,08X048,P.S. 048 Joseph R. Drake,Urban Health Plan
+Bronx,8,PS 075,X075,"984 Faile Street, Bronx, NY, 10459",302,08X075,P.S. 75 School Of Research And Discovery,Urban Health Plan
+Bronx,9,CES 55 Campus,X055,"450 Saint Pauls Place, Bronx, NY, 10456",212,84X494,Success Academy Charter School - Bronx 2,Montefiore Medical Center
+Bronx,9,CES 55 Campus,X055,"450 Saint Pauls Place, Bronx, NY, 10456",212,09X055,P.S. 055 Benjamin Franklin,Montefiore Medical Center
+Bronx,9,Charles Drew Campus,X148,"3630 Third Avenue, Bronx, NY, 10456",184,09X219,I.S. 219 New Venture School,Children's Aid Society
+Bronx,9,Charles Drew Campus,X148,"3630 Third Avenue, Bronx, NY, 10456",184,09X517,Frederick Douglass Academy III Secondary School,Children's Aid Society
+Bronx,9,Charles Drew Campus,X148,"3630 Third Avenue, Bronx, NY, 10456",184,09X215,Kappa,Children's Aid Society
+Bronx,9,IS 232 Campus,X082,"1700 Macombs Road, Bronx, NY, 10453",202,09X365,Academy For Language And Technology,Morris Heights Health Center
+Bronx,9,IS 232 Campus,X082,"1700 Macombs Road, Bronx, NY, 10453",202,09X303,I.S. X303 Leadership & Community Service,Morris Heights Health Center
+Bronx,9,IS 232 Campus,X082,"1700 Macombs Road, Bronx, NY, 10453",202,09X232,I.S. 232,Morris Heights Health Center
+Bronx,9,Morris Educational Campus,X400,"1110 Boston Road, Bronx, NY, 10456",B15A,09X297,Morris Academy For Collaborative Studies,Montefiore Medical Center
+Bronx,9,Morris Educational Campus,X400,"1110 Boston Road, Bronx, NY, 10456",B15A,09X403,Bronx International High School,Montefiore Medical Center
+Bronx,9,Morris Educational Campus,X400,"1110 Boston Road, Bronx, NY, 10456",B15A,09X543,High School For Violin And Dance,Montefiore Medical Center
+Bronx,9,Morris Educational Campus,X400,"1110 Boston Road, Bronx, NY, 10456",B15A,09X404,School For Excellence,Montefiore Medical Center
+Bronx,9,Mott Hall Campus,X166,"250 East 164 Street, Bronx, NY, 10456",100,09X324,Bronx Early College Academy For Teaching & Learning,Morris Heights Health Center
+Bronx,9,Mott Hall Campus,X166,"250 East 164 Street, Bronx, NY, 10456",100,09X454,Science And Technology Academy: A Mott Hall School,Morris Heights Health Center
+Bronx,9,Mott Hall Campus,X166,"250 East 164 Street, Bronx, NY, 10456",100,09X449,Grant Avenue Elementary School,Morris Heights Health Center
+Bronx,9,New Settlement Campus,X240,"1501 Jerome Avenue, Bronx, NY, 10452",306,09X327,Comprehensive Model School Project M.S. 327,Montefiore Medical Center
+Bronx,9,New Settlement Campus,X240,"1501 Jerome Avenue, Bronx, NY, 10452",306,09X555,Mount Eden Children's Academy,Montefiore Medical Center
+Bronx,9,New Settlement Campus,X240,"1501 Jerome Avenue, Bronx, NY, 10452",306,X010@09X240,P010X@ P240,Montefiore Medical Center
+Bronx,9,PS 028 Mount Hope,X028,"1861 Anthony Avenue, Bronx, NY, 10457",bsmt,09X028,P.S. 028 Mount Hope,Montefiore Medical Center
+Bronx,9,PS 126 Dr Marjorie H Dunbar,X126,"175 West 166 Street, Bronx, NY, 10452",131,09X126,P.S. 126 Dr Marjorie H Dunbar,Morris Heights Health Center
+Bronx,9,PS 147 Campus,X147,"1600 Webster Avenue, Bronx, NY, 10457",108,09X339,I.S. 339,Montefiore Medical Center
+Bronx,9,PS 147 Campus,X147,"1600 Webster Avenue, Bronx, NY, 10457",108,09X313,I.S. 313 School Of Leadership Development,Montefiore Medical Center
+Bronx,9,PS 199 The Shakespeare School,X104,"1449 Shakespeare Avenue, Bronx, NY,10452",426,09X199,P.S. 199X - The Shakespeare School,Montefiore Medical Center
+Bronx,9,PS 90 George Meany Campus,X090,"1116 Sheridan Avenue, Bronx, NY, 10456",162,09X457,Sheridan Academy For Young Leaders,Morris Heights Health Center
+Bronx,9,PS 90 George Meany Campus,X090,"1116 Sheridan Avenue, Bronx, NY, 10456",162,09X443,The Family School,Morris Heights Health Center
+Bronx,9,Teller Avenue Campus,X145,"1000 Teller Avenue, Bronx, NY, 10456",145,84X380,Success Academy Charter School - Bronx 3,Montefiore Medical Center
+Bronx,9,Teller Avenue Campus,X145,"1000 Teller Avenue, Bronx, NY, 10456",145,09X594,New Pathways Academy,Montefiore Medical Center
+Bronx,9,Teller Avenue Campus,X145,"1000 Teller Avenue, Bronx, NY, 10456",145,09X593,South Bronx International Middle School,Montefiore Medical Center
+Bronx,9,Teller Avenue Campus,X145,"1000 Teller Avenue, Bronx, NY, 10456",145,09X328,New Millennium Bronx Academy Of The Arts,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,09X227,Bronx Collegiate Academy,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,09X413,Bronx High School For Medical Science,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,09X564,Claremont International HS,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,09X412,Bronx High School Of Business,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,09X329,Dreamyard Preparatory School,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,09X350,New Directions Secondary School,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,X469@09X227,P469X@ M227X,Montefiore Medical Center
+Bronx,9,William Howard Taft Campus,X410,"240 East 172 Street, Bronx, NY, 10457",B100,79M984#X410,Lyfe,Montefiore Medical Center
+Bronx,10,CES 306 Campus,X306,"40 West Tremont Avenue, Bronx, NY, 10453",103,10X306,P.S. 306,Morris Heights Health Center
+Bronx,10,CES 306 Campus,X306,"40 West Tremont Avenue, Bronx, NY, 10453",103,10X331,The Bronx School Of Young Leaders,Morris Heights Health Center
+Bronx,10,Creston Campus,X079,"125 East 181 Street, Bronx, NY, 10453",369,10X447,Creston Academy,Morris Heights Health Center
+Bronx,10,Creston Campus,X079,"125 East 181 Street, Bronx, NY, 10453",369,10X386,School For Environmental Citizenship,Morris Heights Health Center
+Bronx,10,Creston Campus,X079,"125 East 181 Street, Bronx, NY, 10453",369,10X382,"Elementary School For Math, Science, And Technology",Morris Heights Health Center
+Bronx,10,DeWitt Clinton Campus,X440,"100 West Mosholu Parkway South, Bronx, NY, 10468",262B,10X440,Dewitt Clinton High School,Montefiore Medical Center
+Bronx,10,DeWitt Clinton Campus,X440,"100 West Mosholu Parkway South, Bronx, NY, 10468",262B,10X353,World View High School,Montefiore Medical Center
+Bronx,10,DeWitt Clinton Campus,X440,"100 West Mosholu Parkway South, Bronx, NY, 10468",262B,10X351,Bronx Collaborative High School,Montefiore Medical Center
+Bronx,10,DeWitt Clinton Campus,X440,"100 West Mosholu Parkway South, Bronx, NY, 10468",262B,79Q950#X440,Pathways To Graduation,Montefiore Medical Center
+Bronx,10,DeWitt Clinton Campus,X440,"100 West Mosholu Parkway South, Bronx, NY, 10468",262B,79M379#X440,Yabc,Montefiore Medical Center
+Bronx,10,DeWitt Clinton Campus,X440,"100 West Mosholu Parkway South, Bronx, NY, 10468",262B,79M984#X440,Lyfe,Montefiore Medical Center
+Bronx,10,Grace Dodge Campus,X660,"2474 Crotona Avenue, Bronx, NY, 10458",105,10X264,Bronx Academy For Software Engineering (Base),Morris Heights Health Center
+Bronx,10,Grace Dodge Campus,X660,"2474 Crotona Avenue, Bronx, NY, 10458",105,10X565,High School For Energy And Technology,Morris Heights Health Center
+Bronx,10,Grace Dodge Campus,X660,"2474 Crotona Avenue, Bronx, NY, 10458",105,10X524,Crotona International High School,Morris Heights Health Center
+Bronx,10,InTech Academy,X368,"2975 Tibbett Avenue, Bronx, NY, 10463",123,10X368,In-Tech Academy (M.S. / High School 368),Morris Heights Health Center
+Bronx,10,InTech Academy,X368,"2975 Tibbett Avenue, Bronx, NY, 10463",123,X721@10X368,P721X @ P368X,Morris Heights Health Center
+Bronx,10,JHS 045 Thomas C. Giordano,X045,"2502 Lorillard Place, Bronx, NY, 10458",B-31,10X045,Thomas C. Giordano Middle School 45,Montefiore Medical Center
+Bronx,10,JHS 045 Thomas C. Giordano,X045,"2502 Lorillard Place, Bronx, NY, 10458",B-31,X012@10X045,12X@ MS 045 Thomas C. Giordano,Montefiore Medical Center
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,84X539,New Visions Charter High School For Advanced Math And Science,New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,10X477,Marble Hill High School For International Studies,New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,84X553,New Visions Charter High School For The Humanities,New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,10X284,Bronx School Of Law And Finance,New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,10X213,Bronx Engineering And Technology Academy,New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,10X397,English Language Learners And International Support Preparatory Academy (Ellis),New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,10X546,Bronx Theatre High School,New York-Presbyterian
+Bronx,10,John F Kennedy Campus,X475,"99 Terrace View Avenue, Bronx, NY, 10463",C104,79M379#X475,Yabc,New York-Presbyterian
+Bronx,10,Marie Curie High School,X143,"120 West 231 Street, Bronx, NY, 10463",332,10X244,The New School For Leadership And Journalism,Morris Heights Health Center
+Bronx,10,Marie Curie High School,X143,"120 West 231 Street, Bronx, NY, 10463",332,10X237,"The Marie Curie School For Medicine, Nursing, And Health Professions",Morris Heights Health Center
+Bronx,10,MS 390,X026,"1930 Andrews Avenue, Bronx, NY, 10453",200,10X390,M.S. 390,Morris Heights Health Center
+Bronx,10,MS 390,X026,"1930 Andrews Avenue, Bronx, NY, 10453",200,10X396,P.S. 396,Morris Heights Health Center
+Bronx,10,MS 399,X115,"120 East 184 Street, Bronx, NY, 10468",107,10X363,Academy For Personal Leadership And Excellence,Morris Heights Health Center
+Bronx,10,PS 008 Isaac Varian,X008,"3010 Briggs Avenue, Bronx, NY, 10458",1390,10X008,P.S. 008 Isaac Varian,Montefiore Medical Center
+Bronx,10,PS 085 Great Expectations,X085,"2400 Marion Avenue, Bronx, NY, 10458",105,10X085,P.S. 085 Great Expectations,Montefiore Medical Center
+Bronx,10,PS 95 Campus,X095,"3961 Hillman Avenue, Bronx, NY, 10463",101,10X095,P.S. 095 Sheila Mencher,Montefiore Medical Center
+Bronx,10,PS 95 Campus,X095,"3961 Hillman Avenue, Bronx, NY, 10463",101,10X344,Ampark Neighborhood School,Montefiore Medical Center
+Bronx,10,PS/MS 279,X279,"2100 Walton Avenue, Bronx, NY, 10453",218,10X279,"P.S. 279 Captain Manuel Rivera, Jr.",Morris Heights Health Center
+Bronx,10,Theatre Arts Production Company School,X137,"2225 Webster Avenue, Bronx, NY, 10457",309,10X225,Theatre Arts Production Company School,Morris Heights Health Center
+Bronx,10,Theatre Arts Production Company School,X137,"2225 Webster Avenue, Bronx, NY, 10457",309,10X391,The Angelo Patri Middle School,Morris Heights Health Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,10X243,West Bronx Academy For The Future,Montefiore Medical Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,10X374,Knowledge And Power Preparatory Academy International High School (Kappa),Montefiore Medical Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,10X439,Bronx High School For Law And Community Service,Montefiore Medical Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,10X438,Fordham Leadership Academy,Montefiore Medical Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,10X434,Belmont Preparatory High School,Montefiore Medical Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,10X437,Fordham High School For The Arts,Montefiore Medical Center
+Bronx,10,Theodore Roosevelt Campus,X435,"500 East Fordham Road, Bronx, NY, 10458",BW4,79M984#X435,Lyfe,Montefiore Medical Center
+Bronx,10,Walton Campus,X430,"2780 Reservoir Avenue, Bronx, NY, 10468",B50,10X342,International School For Liberal Arts,Montefiore Medical Center
+Bronx,10,Walton Campus,X430,"2780 Reservoir Avenue, Bronx, NY, 10468",B50,10X442,"Celia Cruz Bronx High School Of Music, The",Montefiore Medical Center
+Bronx,10,Walton Campus,X430,"2780 Reservoir Avenue, Bronx, NY, 10468",B50,10X549,Discovery High School,Montefiore Medical Center
+Bronx,10,Walton Campus,X430,"2780 Reservoir Avenue, Bronx, NY, 10468",B50,10X433,High School For Teaching And The Professions,Montefiore Medical Center
+Bronx,10,Walton Campus,X430,"2780 Reservoir Avenue, Bronx, NY, 10468",B50,10X268,Kingsbridge International High School,Montefiore Medical Center
+Bronx,10,Walton Campus,X430,"2780 Reservoir Avenue, Bronx, NY, 10468",B50,79M379#X430,Walton Yabc,Montefiore Medical Center
+Bronx,11,Albert V Tuitt Campus,X362,"921 East 228 Street, Bronx, NY, 10466",202,11X270,Academy For Scholarship And Entrepreneurship,Morris Heights Health Center
+Bronx,11,Albert V Tuitt Campus,X362,"921 East 228 Street, Bronx, NY, 10466",202,11X514,The Bronxwood Preparatory Academy,Morris Heights Health Center
+Bronx,11,Albert V Tuitt Campus,X362,"921 East 228 Street, Bronx, NY, 10466",202,11X513,New World High School,Morris Heights Health Center
+Bronx,11,Albert V Tuitt Campus,X362,"921 East 228 Street, Bronx, NY, 10466",202,X754@12XB54,P754X@Hb54X,Morris Heights Health Center
+Bronx,11,Christopher Columbus Campus,X415,"925 Astor Avenue, Bronx, NY, 10469",228A,11X288,Collegiate Institute For Math And Science,Montefiore Medical Center
+Bronx,11,Christopher Columbus Campus,X415,"925 Astor Avenue, Bronx, NY, 10469",228A,11X542,Pelham Preparatory Academy,Montefiore Medical Center
+Bronx,11,Christopher Columbus Campus,X415,"925 Astor Avenue, Bronx, NY, 10469",228A,11X299,Astor Collegiate Academy,Montefiore Medical Center
+Bronx,11,Christopher Columbus Campus,X415,"925 Astor Avenue, Bronx, NY, 10469",228A,11X508,Bronxdale High School,Montefiore Medical Center
+Bronx,11,Christopher Columbus Campus,X415,"925 Astor Avenue, Bronx, NY, 10469",228A,11X509,High School Of Language And Innovation,Montefiore Medical Center
+Bronx,11,Christopher Columbus Campus,X415,"925 Astor Avenue, Bronx, NY, 10469",228A,79M379#X415,C Columbus HS Yabc,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,11X275,High School Of Computers And Technology,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,11X290,Bronx Academy Of Health Careers,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,11X544,High School For Contemporary Arts,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,11X265,Bronx Lab School,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,11X253,Bronx High School For Writing And Communication Arts,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,11X545,Bronx Aerospace High School,Montefiore Medical Center
+Bronx,11,Evander Childs Campus,X425,"800 East Gun Hill Road, Bronx, NY, 10467",159,X176@11X275,P176X@ H275X,Montefiore Medical Center
+Bronx,11,Harry S Truman Campus,X455,"750 Baychester Avenue, Bronx, NY, 10475",142,11X455,Harry S Truman High School,Morris Heights Health Center
+Bronx,11,Harry S Truman Campus,X455,"750 Baychester Avenue, Bronx, NY, 10475",142,11X249,Bronx Health Sciences High School,Morris Heights Health Center
+Bronx,11,IS 113 Campus,X113,"3710 Barnes Avenue, Bronx, NY, 10467",274,11X370,Leaders Of Tomorrow,Montefiore Medical Center
+Bronx,11,IS 113 Campus,X113,"3710 Barnes Avenue, Bronx, NY, 10467",274,11X287,North Bronx School Of Empowerment,Montefiore Medical Center
+Bronx,11,John Philip Sousa Campus,X142,"3750 Baychester Avenue, Bronx, NY, 10466",130,11X529,One World Middle School At Edenwald,Montefiore Medical Center
+Bronx,11,John Philip Sousa Campus,X142,"3750 Baychester Avenue, Bronx, NY, 10466",130,11X532,Baychester Middle School,Montefiore Medical Center
+Bronx,11,John Philip Sousa Campus,X142,"3750 Baychester Avenue, Bronx, NY, 10466",130,11X355,Bronx Alliance Middle School,Montefiore Medical Center
+Bronx,11,PS 105 Sen Abraham Bernstein,X105,"725 Brady Avenue, Bronx, NY, 10462",120,11X105,P.S. 105 Sen Abraham Bernstein,Montefiore Medical Center
+Bronx,12,216/217 Campus,X116,"977 Fox Street, Bronx, NY, 10459",109,84X346,South Bronx Classical Charter School,Montefiore Medical Center
+Bronx,12,216/217 Campus,X116,"977 Fox Street, Bronx, NY, 10459",109,12X341,Accion Academy,Montefiore Medical Center
+Bronx,12,216/217 Campus,X116,"977 Fox Street, Bronx, NY, 10459",109,12X217,School Of Performing Arts,Montefiore Medical Center
+Bronx,12,Bronx Regional Campus,X401,"1010 Rev J A Polite Avenue, Bronx, NY, 10459",101,79Q950#X401,Pathways To Graduation,Montefiore Medical Center
+Bronx,12,Bronx Regional Campus,X401,"1010 Rev J A Polite Avenue, Bronx, NY, 10459",101,84X200,New Visions Aim Charter High School Ii,Montefiore Medical Center
+Bronx,12,Bronx Regional Campus,X401,"1010 Rev J A Polite Avenue, Bronx, NY, 10459",101,12X446,Arturo A. Schomburg Satellite Academy Bronx,Montefiore Medical Center
+Bronx,12,Bronx Regional Campus,X401,"1010 Rev J A Polite Avenue, Bronx, NY, 10459",101,12X480,Bronx Regional High School,Montefiore Medical Center
+Bronx,12,Bronx Regional Campus,X401,"1010 Rev J A Polite Avenue, Bronx, NY, 10459",101,79M984#X401,Lyfe,Montefiore Medical Center
+Bronx,12,Fannie Lou Hamer Campus,X066,"1001 Jennings Street, Bronx, NY, 10460",304,12X066,P.S. 066 School Of Higher Expectations,Urban Health Plan
+Bronx,12,Fannie Lou Hamer Campus,X066,"1001 Jennings Street, Bronx, NY, 10460",304,12X286,Fannie Lou Hamer Middle School,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X420,"1300 Boynton Avenue, Bronx, NY, 10472",104,12X550,High School Of World Cultures,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X420,"1300 Boynton Avenue, Bronx, NY, 10472",104,12X521,The Metropolitan Soundview High School,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X420,"1300 Boynton Avenue, Bronx, NY, 10472",104,84X597,Urban Assembly Charter School For Computer Science,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X420,"1300 Boynton Avenue, Bronx, NY, 10472",104,12X388,Pan American International High School At Monroe,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X420,"1300 Boynton Avenue, Bronx, NY, 10472",104,79M379#X420,Yabc,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X420,"1300 Boynton Avenue, Bronx, NY, 10472",104,79M984#X420,Lyfe,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X423,"1551 East 172 Street, Bronx, NY, 10472",B20,12X242,Mott Hall V,Urban Health Plan
+Bronx,12,James Monroe Educational Campus Annex,X423,"1551 East 172 Street, Bronx, NY, 10472",B20,12X478,The Cinema School,Urban Health Plan
+Bronx,12,JHS 98,X098,"1619 Boston Road, Bronx, NY, 10460",106A,12X251,Explorations Academy H.S.,Montefiore Medical Center
+Bronx,12,JHS 98,X098,"1619 Boston Road, Bronx, NY, 10460",106A,12X511,Bronx Envision Academy,Montefiore Medical Center
+Bronx,12,JHS 98,X098,"1619 Boston Road, Bronx, NY, 10460",106A,12X641,Bard High School Early College Bronx,Montefiore Medical Center
+Bronx,12,JHS 98,X098,"1619 Boston Road, Bronx, NY, 10460",106A,12X098,J.H.S. 098 Herman Ridder,Montefiore Medical Center
+Bronx,12,JHS 98,X098,"1619 Boston Road, Bronx, NY, 10460",106A,79M984#X098,Lyfe,Montefiore Medical Center
+Bronx,12,PS 198 Campus,X198,"1180 Tinton Avenue,Bronx, NY, 10456",305,12X463,Urban Scholars Community School,Montefiore Medical Center
+Bronx,12,PS 198 Campus,X198,"1180 Tinton Avenue,Bronx, NY, 10456",305,84X587,NYC Autism Charter School Bronx,Montefiore Medical Center
+Bronx,12,PS 198 Campus,X198,"1180 Tinton Avenue,Bronx, NY, 10456",305,X188@12X212,P188X@P212X,Montefiore Medical Center
+Bronx,12,X158 Campus,X158,"800 Home Street, Bronx, NY, 10456",133,84X482,Dr. Richard Izquierdo Health And Science Charter School,Urban Health Plan
+Bronx,12,X158 Campus,X158,"800 Home Street, Bronx, NY, 10456",133,12X267,Bronx Latin,Urban Health Plan
+Bronx,12,X158 Campus,X158,"800 Home Street, Bronx, NY, 10456",133,12X479,Bronx Career And College Preparatory High School,Urban Health Plan
+Bronx,N/A,Jane Addams Campus,X650,"900 Tinton Avenue, Bronx, NY, 10456",439,84X202,New Visions Charter High School For Advanced Math And Science II,Urban Health Plan
+Bronx,N/A,Jane Addams Campus,X650,"900 Tinton Avenue, Bronx, NY, 10456",439,84X208,New Visions Charter High School For The Humanities II,Urban Health Plan
+Bronx,N/A,Jane Addams Campus,X650,"900 Tinton Avenue, Bronx, NY, 10456",439,79M984#X650,Lyfe,Urban Health Plan
+Brooklyn,13,Benjamin Banneker Academy,K914,"71 Clinton Avenue, Brooklyn, NY, 11205",B06,13K670,Benjamin Banneker Academy,Brooklyn Plaza Medical Center
+Brooklyn,14,Juan Morel Campos,K071,"215 Heyward Street,Brooklyn, NY, 11206",240,84K037,Beginning With Children Charter School II,NYU Langone FHC
+Brooklyn,14,Juan Morel Campos,K071,"215 Heyward Street,Brooklyn, NY, 11206",240,14K071,Juan Morel Campos Secondary School,NYU Langone FHC
+Brooklyn,15,JHS 136 Campus,K136,"4004 4 Avenue, Brooklyn, NY, 11232",159,15K136,I.S. 136 Charles O. Dewey,NYU Langone FHC
+Brooklyn,15,JHS 136 Campus,K136,"4004 4 Avenue, Brooklyn, NY, 11232",159,15K821,Sunset Park Prep,NYU Langone FHC
+Brooklyn,15,PS 001 The Bergen,K001,"309 47 Street, Brooklyn, NY, 11220",131,15K001,P.S. 001 The Bergen,NYU Langone FHC
+Brooklyn,15,PS 024,K024,"427 38 Street, Brooklyn, NY, 11232",115,15K024,P.S. 024,NYU Langone FHC
+Brooklyn,15,PS 094 The Henry Longfellow,K094,"5010 6 Avenue, Brooklyn, NY, 11220",104 A,15K094,P.S. 094 The Henry Longfellow,NYU Langone FHC
+Brooklyn,15,PS 15 Campus,K015,"71 Sullivan Street, Brooklyn, NY, 11231",130,15K015,P.S. 015 Patrick F. Daly,NYU Langone FHC
+Brooklyn,15,PS 15 Campus,K015,"71 Sullivan Street, Brooklyn, NY, 11231",130,84K730,Summit Academy Charter School,NYU Langone FHC
+Brooklyn,15,PS 15 Campus,K015,"71 Sullivan Street, Brooklyn, NY, 11231",130,15K676,Red Hook Neighborhood School,NYU Langone FHC
+Brooklyn,15,PS 169,K169,"4305 7 Avenue, Brooklyn, NY, 11232",101,15K169,P.S. 169 Sunset Park,NYU Langone FHC
+Brooklyn,15,Sunset Park High School,K564,"153 35 Street, Brooklyn, NY, 11232",105,15K667,Sunset Park High School,NYU Langone FHC
+Brooklyn,17,Erasmus Campus,K465,"911 Flatbush Avenue, Brooklyn, NY, 11226",BS-14,17K543,"Science, Technology And Research Early College High School At Erasmus",NYU Langone FHC
+Brooklyn,17,Erasmus Campus,K465,"911 Flatbush Avenue, Brooklyn, NY, 11226",BS-14,17K537,High School For Youth And Community Development,NYU Langone FHC
+Brooklyn,17,Erasmus Campus,K465,"911 Flatbush Avenue, Brooklyn, NY, 11226",BS-14,17K382,Academy For College Preparation And Career Exploration: A College Board School,NYU Langone FHC
+Brooklyn,17,Erasmus Campus,K465,"911 Flatbush Avenue, Brooklyn, NY, 11226",BS-14,17K408,Academy Of Hospitality And Tourism,NYU Langone FHC
+Brooklyn,17,Erasmus Campus,K465,"911 Flatbush Avenue, Brooklyn, NY, 11226",BS-14,17K539,High School For Service & Learning At Erasmus,NYU Langone FHC
+Brooklyn,17,Erasmus Campus,K465,"911 Flatbush Avenue, Brooklyn, NY, 11226",BS-14,79K925#K465,Erasmus Yabc,NYU Langone FHC
+Brooklyn,17,George Wingate Campus,K470,"600 Kingston Avenue, Brooklyn, NY, 11203",H107,17K745,Brooklyn Institute For Liberal Arts,NYU Langone FHC
+Brooklyn,17,George Wingate Campus,K470,"600 Kingston Avenue, Brooklyn, NY, 11203",H107,17K546,High School For Public Service: Heroes Of Tomorrow,NYU Langone FHC
+Brooklyn,17,George Wingate Campus,K470,"600 Kingston Avenue, Brooklyn, NY, 11203",H107,17K531,The School For Human Rights,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,84K775,Leadership Preparatory Ocean Hill Charter School,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,18K637,Academy For Conservation And The Environment,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,18K576,Victory Collegiate High School,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,18K566,Brooklyn Community High School For Excellence And Equity,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,18K567,Brooklyn Theatre Arts High School,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,18K578,Brooklyn Bridge Academy,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,79Q950#K515,Pathways To Graduation,NYU Langone FHC
+Brooklyn,18,South Shore Campus,K515,"6565 Flatlands Avenue, Brooklyn, NY, 11236",C-150,79K925#K515,Yabc,NYU Langone FHC
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,19K639,Brooklyn Lab School,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,19K659,Cypress Hills Collegiate Preparatory School,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,84K608,Kings Collegiate Charter School,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,19K618,Academy Of Innovative Technology,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,19K764,The Urban Assembly School For Collaborative Healthcare,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,19K583,Multicultural High School,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,79Q950#K420,Pathways To Graduation,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,79K925#K420,Yabc,Northwell LIJ
+Brooklyn,19,Franklin K Lane Campus,K420,"999 Jamaica Avenue, Brooklyn, NY, 11208",167,79M984#K420,Lyfe,Northwell LIJ
+Brooklyn,19,Thomas Jefferson Campus,K435,"400 Pennsylvania Avenue, Brooklyn, NY, 11207",148,19K507,Performing Arts And Technology High School,Brownsville Multi-Service Family Health
+Brooklyn,19,Thomas Jefferson Campus,K435,"400 Pennsylvania Avenue, Brooklyn, NY, 11207",148,19K502,Fdny - Captain Vernon A. Richard High School For Fire And Life Safety,Brownsville Multi-Service Family Health
+Brooklyn,19,Thomas Jefferson Campus,K435,"400 Pennsylvania Avenue, Brooklyn, NY, 11207",148,19K504,High School For Civil Rights,Brownsville Multi-Service Family Health
+Brooklyn,19,Thomas Jefferson Campus,K435,"400 Pennsylvania Avenue, Brooklyn, NY, 11207",148,19K510,World Academy For Total Community Health High School,Brownsville Multi-Service Family Health
+Brooklyn,19,Thomas Jefferson Campus,K435,"400 Pennsylvania Avenue, Brooklyn, NY, 11207",148,79K925#K435,Thomas Jefferson Yabc,Brownsville Multi-Service Family Health
+Brooklyn,19,Thomas Jefferson Campus,K435,"400 Pennsylvania Avenue, Brooklyn, NY, 11207",148,79M984#K435,Lyfe,Brownsville Multi-Service Family Health
+Brooklyn,20,503/506 Campus,K314,"330 59 Street, Brooklyn, NY, 11220",123,20K503,P.S. 503: The School Of Discovery,NYU Langone FHC
+Brooklyn,20,503/506 Campus,K314,"330 59 Street, Brooklyn, NY, 11220",123,20K506,P.S. 506: The School Of Journalism & Technology,NYU Langone FHC
+Brooklyn,20,JHS 220 John J Pershing,K220,"4812 9 Avenue, Brooklyn, NY, 11220",113/115,20K220,J.H.S. 220 John J. Pershing,NYU Langone FHC
+Brooklyn,21,Abraham Lincoln High School,K410,"2800 Ocean Parkway, Brooklyn, NY, 11235",B-8,21K410,Abraham Lincoln High School,NYU Langone FHC
+Brooklyn,21,Abraham Lincoln High School,K410,"2800 Ocean Parkway, Brooklyn, NY, 11235",B-8,79Q950#K410,Pathways To Graduation,NYU Langone FHC
+Brooklyn,21,Abraham Lincoln High School,K410,"2800 Ocean Parkway, Brooklyn, NY, 11235",B-8,79K925#K410,Abraham Lincoln Yabc,NYU Langone FHC
+Brooklyn,21,PS 188 Michael E. Berdy,K188,"3314 Neptune Avenue, Brooklyn, NY, 11224",101 J,21K188,mont,NYU Langone FHC
+Brooklyn,22,Frank J. Macchiarola Educational Complex,K495,"3000 Avenue X, Brooklyn, NY, 11235",105,22K611,Origins High School,NYU Langone FHC
+Brooklyn,22,Frank J. Macchiarola Educational Complex,K495,"3000 Avenue X, Brooklyn, NY, 11235",105,84K738,New Visions Charter High School For Advanced Math And Science III,NYU Langone FHC
+Brooklyn,22,Frank J. Macchiarola Educational Complex,K495,"3000 Avenue X, Brooklyn, NY, 11235",105,22K630,Professional Pathways High School,NYU Langone FHC
+Brooklyn,22,Frank J. Macchiarola Educational Complex,K495,"3000 Avenue X, Brooklyn, NY, 11235",105,84K739,New Visions Charter High School For The Humanities III,NYU Langone FHC
+Brooklyn,22,Frank J. Macchiarola Educational Complex,K495,"3000 Avenue X, Brooklyn, NY, 11235",105,84K752,Success Academy Charter School - Fort Greene,NYU Langone FHC
+Brooklyn,32,Bushwick Educational Campus,K480,"400 Irving Avenue, Brooklyn, NY, 11237",104,32K552,The Academy Of Urban Planning And Engineering,NYU Langone FHC
+Brooklyn,32,Bushwick Educational Campus,K480,"400 Irving Avenue, Brooklyn, NY, 11237",104,32K168,The Brooklyn School For Math And Research,NYU Langone FHC
+Brooklyn,32,Bushwick Educational Campus,K480,"400 Irving Avenue, Brooklyn, NY, 11237",104,32K549,The Brooklyn School For Social Justice,NYU Langone FHC
+Brooklyn,32,Bushwick Educational Campus,K480,"400 Irving Avenue, Brooklyn, NY, 11237",104,32K403,Academy For Excellence In Leadership,NYU Langone FHC
+Brooklyn,32,Bushwick Educational Campus,K480,"400 Irving Avenue, Brooklyn, NY, 11237",104,79M984#K480,Lyfe,NYU Langone FHC
+Brooklyn,32,Roland Hayes Campus,K291,"231 Palmetto Street, Brooklyn, NY, 11221",123,84K733,"Math, Engineering, And Science Academy Charter High School",NYU Langone FHC
+Brooklyn,32,Roland Hayes Campus,K291,"231 Palmetto Street, Brooklyn, NY, 11221",123,32K291,J.H.S. 291 Roland Hayes,NYU Langone FHC
+Brooklyn,32,Roland Hayes Campus,K291,"231 Palmetto Street, Brooklyn, NY, 11221",123,32K564,Bushwick Community High School,NYU Langone FHC
+Queens,24,Elmhurst Campus,Q744,"45-10 94 Street, Queens, NY, 11373",134,24Q293,Civic Leadership Academy,Urban Health Plan
+Queens,24,Elmhurst Campus,Q744,"45-10 94 Street, Queens, NY, 11373",134,24Q296,Pan American International High School,Urban Health Plan
+Queens,24,Elmhurst Campus,Q744,"45-10 94 Street, Queens, NY, 11373",134,24Q744,Voyages Preparatory,Urban Health Plan
+Queens,24,Elmhurst Campus,Q744,"45-10 94 Street, Queens, NY, 11373",134,79Q950#Q744,Pathways To Graduation,Urban Health Plan
+Queens,24,Elmhurst Campus,Q744,"45-10 94 Street, Queens, NY, 11373",134,Q752@24Q744,P752@P744 Elmhurst Educational Campus,Urban Health Plan
+Queens,24,Newtown Campus,Q455,"48-01 90 Street, Queens, NY, 11373",366,24Q455,Newtown High School,Urban Health Plan
+Queens,24,Newtown Campus,Q455,"48-01 90 Street, Queens, NY, 11373",366,24Q236,International High School For Health Sciences,Urban Health Plan
+Queens,27,August Martin Campus,Q400,"156-10 Baisley Boulevard, Queens, NY, 11434",109,27Q400,August Martin High School,Northwell LIJ
+Queens,27,August Martin Campus,Q400,"156-10 Baisley Boulevard, Queens, NY, 11434",109,84Q320,New Visions Charter High School For Advanced Math And Science IV,Northwell LIJ
+Queens,27,August Martin Campus,Q400,"156-10 Baisley Boulevard, Queens, NY, 11434",109,27Q261,Voyages Prep - South Queens,Northwell LIJ
+Queens,27,August Martin Campus,Q400,"156-10 Baisley Boulevard, Queens, NY, 11434",109,79Q950#Q400,Pathways To Graduation,Northwell LIJ
+Queens,27,August Martin Campus,Q400,"156-10 Baisley Boulevard, Queens, NY, 11434",109,79M973#Q400,Restart Academy,Northwell LIJ
+Queens,27,Brian Piccolo Campus,Q053,"10-45 Nameoke Street, Queens, NY, 11691",113,84Q375,Success Academy Charter School - Far Rockaway,Northwell LIJ
+Queens,27,Brian Piccolo Campus,Q053,"10-45 Nameoke Street, Queens, NY, 11691",113,27Q319,Village Academy,Northwell LIJ
+Queens,27,Brian Piccolo Campus,Q053,"10-45 Nameoke Street, Queens, NY, 11691",113,27Q053,M.S. 053 Brian Piccolo,Northwell LIJ
+Queens,27,Far Rockaway Campus,Q465,"821 Bay 25 Street, Queens, NY, 11691",106,27Q309,Academy Of Medical Technology: A College Board School,Northwell LIJ
+Queens,27,Far Rockaway Campus,Q465,"821 Bay 25 Street, Queens, NY, 11691",106,27Q302,"Queens High School For Information, Research, And Technology",Northwell LIJ
+Queens,27,Far Rockaway Campus,Q465,"821 Bay 25 Street, Queens, NY, 11691",106,27Q260,Frederick Douglass Academy Vi High School,Northwell LIJ
+Queens,27,Far Rockaway Campus,Q465,"821 Bay 25 Street, Queens, NY, 11691",106,27Q282,Knowledge And Power Preparatory Academy VI,Northwell LIJ
+Queens,27,Far Rockaway Campus,Q465,"821 Bay 25 Street, Queens, NY, 11691",106,79Q950#Q465,Pathways To Graduation,Northwell LIJ
+Queens,27,Far Rockaway Campus,Q465,"821 Bay 25 Street, Queens, NY, 11691",106,79M984#Q465,Lyfe,Northwell LIJ
+Queens,27,John Adams High School,Q480,"101-01 Rockaway Boulevard, Queens, NY, 11417",B17,27Q480,John Adams High School,Northwell LIJ
+Queens,27,John Adams High School,Q480,"101-01 Rockaway Boulevard, Queens, NY, 11417",B17,79Q950#Q480,Pathways To Graduation,Northwell LIJ
+Queens,27,John Adams High School,Q480,"101-01 Rockaway Boulevard, Queens, NY, 11417",B17,79K925#Q480,John Adams Yabc,Northwell LIJ
+Queens,27,PS 155,Q155,"130-02 115 Avenue, Queens, NY, 11420",103,27Q155,P.S. 155,Jamaica Hospital Medical Center
+Queens,27,PS 223,Q223,"125-20 Sutphin Boulevard, Queens, NY, 11434",101,27Q223,P.S. 223 Lyndon B. Johnson,Jamaica Hospital Medical Center
+Queens,29,Campus Magnet (Jackson),Q490,"207-01 116 Avenue, Queens, NY, 11411",B-19,29Q498,"Health, Arts, Robotics, And Technology High School",Jamaica Hospital Medical Center
+Queens,29,Campus Magnet (Jackson),Q490,"207-01 116 Avenue, Queens, NY, 11411",B-19,29Q243,Institute For Health Professions At Cambria Heights,Jamaica Hospital Medical Center
+Queens,29,Campus Magnet (Jackson),Q490,"207-01 116 Avenue, Queens, NY, 11411",B-19,29Q492,"Mathematics, Science Research And Technology Magnet High School",Jamaica Hospital Medical Center
+Queens,29,Campus Magnet (Jackson),Q490,"207-01 116 Avenue, Queens, NY, 11411",B-19,29Q313,Benjamin Franklin High School For Finance & Information Technology,Jamaica Hospital Medical Center
+Queens,30,Long Island City High School,Q452,"14-30 Broadway, Queens, NY, 11106",546,30Q450,Long Island City High School,NYU Langone FHC
+Queens,30,Long Island City High School,Q452,"14-30 Broadway, Queens, NY, 11106",546,79M645#Q452,Coop Tech,NYU Langone FHC
+Queens,30,Long Island City High School,Q452,"14-30 Broadway, Queens, NY, 11106",546,79M984#Q452,Lyfe,NYU Langone FHC
+Staten Island,31,Curtis High School,R450,"105 Hamilton Avenue, Staten Island, NY, 10301",116,31R450,Curtis High School,Children's Aid Society
+Staten Island,31,New Dorp High School,R435,"465 New Dorp Lane, Staten Island, NY, 10306",S117,31R440,New Dorp High School,Northwell SIUH
+Staten Island,31,Port Richmond High School,R445,"85 Saint Josephs Avenue, Staten Island, NY, 10302",B-156,31R445,Port Richmond High School,Northwell SIUH
+Staten Island,31,Port Richmond High School,R445,"85 Saint Josephs Avenue, Staten Island, NY, 10302",B-156,R025@31R445,P025R @ Port Richmond High School,Northwell SIUH
+Staten Island,31,Port Richmond High School,R445,"85 Saint Josephs Avenue, Staten Island, NY, 10302",B-156,79M973#R445,Restart Academy,Northwell SIUH
+Staten Island,31,Port Richmond High School,R445,"85 Saint Josephs Avenue, Staten Island, NY, 10302",B-156,79M984#R445,Lyfe,Northwell SIUH
+Staten Island,31,Susan E. Wagner High School,R460,"1200 Manor Road, Staten Island, NY, 10314",174,31R460,Susan E. Wagner High School,Richmond University Medical Center
