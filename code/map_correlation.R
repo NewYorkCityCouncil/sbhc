@@ -12,7 +12,7 @@ rm(ll12_21_merge)
 
 p_map <- ggplot(school_dist_shp, aes(fill = percent_poverty, data_id = school_dis)) + 
   geom_sf_interactive(size = 0.1) +
-  scale_fill_distiller() +
+  scale_fill_distiller(direction = 1) +
   theme_nycc() + 
   theme(axis.line=element_blank(),
         axis.text.x=element_blank(),
@@ -24,7 +24,7 @@ p_plot <- ggplot(school_dist_shp,
            data_id = school_dis)) + 
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
                          show.legend = FALSE) + 
-  scale_color_distiller() +
+  scale_color_distiller(direction = 1) +
   # scale_y_log10() + 
   scale_x_continuous(labels = scales::percent) +
   # theme_minimal(base_size = 12) + 
