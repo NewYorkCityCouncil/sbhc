@@ -1,4 +1,4 @@
-# run 01_prepare-data.R first - need school_dist_shp
+# run 01_prepare-data.R first - need school_dist_shp, map_sf
 
 # grap # sbhcs per dis
 ll12_21 <- read_excel("data/input/Local Law 12 School Year 2021-22.xlsx", sheet = "Reports_Data", skip = 1)
@@ -10,8 +10,17 @@ school_dist_shp <-
 rm(ll12_21)
 rm(ll12_21_merge)
 
-p_map <- ggplot(school_dist_shp, aes(fill = percent_poverty, data_id = school_dis)) + 
-  geom_sf_interactive(size = 0.1) +
+# filter map 
+map_sf <- map_sf %>%
+  filter(is.na(campus_name))
+
+p_map <- ggplot(NULL) + 
+  geom_sf_interactive(data = school_dist_shp, size = 0.1, 
+                      aes(fill = percent_poverty,
+                          data_id = school_dis)) +
+  # geom_point(data = map_sf, # add schools
+  #            aes(x = longitude, y = latitude,
+  #                col="grey", alpha = 0.2)) + 
   scale_fill_distiller(direction = 1) +
   theme_nycc() + 
   theme(axis.line=element_blank(),
@@ -30,7 +39,7 @@ p_plot <- ggplot(school_dist_shp,
   # theme_minimal(base_size = 12) + 
   theme_nycc() +
   labs(color = "Percent Poverty",
-       x = "Percent Poverty",
+       x = NULL,
        y = "Total SBHCs")
 
 girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>%
