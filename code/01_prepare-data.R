@@ -50,10 +50,14 @@ school_sf <- read.csv("data/input/Schooldata_24.csv") %>%
   clean_names()
 
 # add school-level enrollment data
-#enrollment_school <- read_excel("data/input/demographic-snapshot-2018-19-to-2022-23-(public).xlsx", sheet = "School") %>%
-#  filter(Year == "2022-23") %>%
-#  clean_names()
+enrollment_school <- read_excel("data/input/demographic-snapshot-2018-19-to-2022-23-(public).xlsx", sheet = "School") %>%
+  filter(Year == "2022-23") %>%
+  clean_names()
 
+school_sf <- school_sf %>%
+  left_join(enrollment_school %>%
+              select(dbn,total_enrollment), 
+            by = join_by(ats_system_code == dbn))
 
 # 2019 schools lat/lons
 school_long_lat_df <- read.socrata("https://data.cityofnewyork.us/resource/wg9x-4ke6.csv?$limit=9999999") %>% 
@@ -75,11 +79,15 @@ school_sf <- school_sf %>%
 school_building_sf <- school_sf %>%
   filter(status_description == "Open") %>%
   group_by(building_code) %>%
+  # retrieve the top enrolled school in building
+  arrange(desc(total_enrollment)) %>%
   # collapse all open schools in building code to one line
   mutate(open_schools = paste(sort(location_name),collapse = "|"),
-         num_open_schools = length(location_name)) %>%
+         num_open_schools = length(location_name),
+         top_school_enrolled = first(location_name),
+         total_enrolled = sum(total_enrollment)) %>%
   filter(row_number() == 1) %>%
-  select(building_code,open_schools,num_open_schools,primary_address,city,longitude,latitude)
+  select(building_code,open_schools,num_open_schools,top_school_enrolled,total_enrolled,primary_address,city,longitude,latitude)
 
 # Merge sbhc data with school buildings
 map_sf <- school_building_sf %>%
@@ -194,7 +202,7 @@ school_dist_shp <- school_dist_shp %>%
 map_sf$services_provided[map_sf$services_provided==""] <- NA
 
 # Remove unused assets
-rm(merge_df,sbhc_merge,d79_codes,school_building_sf,school_long_lat_df,school_sf, dist_10,ll12_21,ll12_21_merge, enrollment_district,closed_sbhc_merge)
+rm(merge_df,sbhc_merge,d79_codes,school_building_sf,school_long_lat_df,school_sf, dist_10,ll12_21,ll12_21_merge,enrollment_school,enrollment_district,closed_sbhc_merge)
 
 # Save map and school district data as csvs
 #write_csv(map_sf,"data/output/map_sf.csv")

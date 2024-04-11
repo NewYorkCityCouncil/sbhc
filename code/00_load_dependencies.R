@@ -51,3 +51,26 @@ Gcode<-function(Address, Boro){
   names(XY)<-c("Number", "Street", "Coordinates", "Zip", "Borough", "BBL")
   return(ll)
 }
+
+# Function for (excel) proper capitalizations
+proper=function(s) gsub("(?<=\\b)([a-z])", "\\U\\1", tolower(s), perl=TRUE)
+
+# Adding custom legend
+addLegendCustom <- function(map, colors, labels, sizes, shapes, borders, title,position = "topright",opacity = 0.5){
+  
+  make_shapes <- function(colors, sizes, borders, shapes) {
+    shapes <- gsub("circle", "50%", shapes)
+    shapes <- gsub("square", "0%", shapes)
+    paste0(colors, "; width:", sizes, "px; height:", sizes, "px; border:3px solid ", borders, "; border-radius:", shapes)
+  }
+  make_labels <- function(sizes, labels) {
+    paste0("<div style='display: inline-block;height: ", 
+           sizes, "px;margin-top: 4px;line-height: ", 
+           sizes, "px;'>", labels, "</div>")
+  }
+  
+  legend_colors <- make_shapes(colors, sizes, borders, shapes)
+  legend_labels <- make_labels(sizes, labels)
+  
+  return(addLegend(map, colors = legend_colors, labels = legend_labels, opacity = opacity,title = title,position = position))
+}
