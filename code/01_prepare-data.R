@@ -32,12 +32,15 @@ merge_df <- smhc %>%
 #  left_join(merge_df, by = join_by(bldg == building_code))
 
 # Prepare this data for school merge by building number
+# Unique District 79 Programs
+d79_codes <- sbhc %>% filter(grepl("#",dbn)) %>% pull(dbn) %>% lapply(.,function(x) gsub("#.*", "", x)) %>% unlist %>% unique()
+
 sbhc_merge <- sbhc %>%
-  # Take out all the satellite programs
-  filter(!grepl("#",dbn)) %>% 
+  # Add '[D79]' in front of all their alternative programs
+  mutate(school_name = ifelse(grepl(paste(d79_codes,collapse="|"),dbn),paste("[D79]",school_name),school_name)) %>%
   group_by(bldg) %>%
   # collapse all schools in building code to one line
-  mutate(schools_served = paste(sort(school_name),collapse = ", "),
+  mutate(schools_served = paste(sort(school_name),collapse = "|"),
          num_school_served = length(school_name)) %>%
   filter(row_number() == 1) %>%
   select(bldg,campus_name,room,sbhc_sponsor,schools_served,num_school_served)
@@ -73,7 +76,7 @@ school_building_sf <- school_sf %>%
   filter(status_description == "Open") %>%
   group_by(building_code) %>%
   # collapse all open schools in building code to one line
-  mutate(open_schools = paste(sort(location_name),collapse = ", "),
+  mutate(open_schools = paste(sort(location_name),collapse = "|"),
          num_open_schools = length(location_name)) %>%
   filter(row_number() == 1) %>%
   select(building_code,open_schools,num_open_schools,primary_address,city,longitude,latitude)
@@ -81,10 +84,12 @@ school_building_sf <- school_sf %>%
 # Merge sbhc data with school buildings
 map_sf <- school_building_sf %>%
   left_join(sbhc_merge, by = join_by(building_code == bldg)) %>%
-  left_join(merge_df) %>%
-  rowwise() %>%
-  mutate(diff_a = list(Reduce(setdiff, strsplit(c(open_schools, schools_served), split = ", "))),
-         diff_b = list(Reduce(setdiff, strsplit(c(schools_served, open_schools), split = ", "))))
+  left_join(merge_df) 
+## Check for same differences in open schools and schools served by SBHC
+#%>%
+#  rowwise() %>%
+#  mutate(diff_a = list(Reduce(setdiff, strsplit(c(open_schools, schools_served), split = ", "))),
+#         diff_b = list(Reduce(setdiff, strsplit(c(schools_served, open_schools), split = ", "))))
 
 # Fill in blank long+lats
 map_sf <- map_sf %>% 
@@ -185,5 +190,13 @@ school_dist_shp <- school_dist_shp %>%
          percent_diabetes1 = diabetes1/total_enrollment,
          percent_diabetes2 = diabetes2/total_enrollment)
 
+# Make all empty to NAs
+map_sf$services_provided[map_sf$services_provided==""] <- NA
+
 # Remove unused assets
-rm(merge_df,sbhc_merge,school_building_sf,school_long_lat_df,school_sf, dist_10,ll12_21,ll12_21_merge, enrollment_district,closed_sbhc_merge)
+rm(merge_df,sbhc_merge,d79_codes,school_building_sf,school_long_lat_df,school_sf, dist_10,ll12_21,ll12_21_merge, enrollment_district,closed_sbhc_merge)
+
+# Save map and school district data as csvs
+#write_csv(map_sf,"data/output/map_sf.csv")
+#write_csv(school_dist_shp,"data/output/school_districts_shp.csv")
+

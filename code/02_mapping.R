@@ -85,8 +85,22 @@ diabetes2_pal = councildown::colorBin(
 
 # Separate the dataset
 # Schools w/o SBHC or SMHC
-s_wo_hc_df <- map_df %>%
+map_sf <- map_sf %>%
+  mutate(marker_color = case_when(
+    building_code %in% closed_sbhc ~ "red",
+    !(building_code %in% closed_sbhc) & !is.na(campus_name) & is.na(services_provided) ~ "green",
+    !(building_code %in% closed_sbhc) & !is.na(campus_name) & !is.na(services_provided) ~ "purple",
+    is.na(campus_name) & !is.na(services_provided) ~ "blue",
+    TRUE ~ "black"
+  ))
+
+s_wo_hc_df <- map_sf %>%
   filter()
+# Schools w/ SBHC
+s_w_sbhc_df <- 
+# Closed from '23
+closed_df <- map_sf %>%
+  filter(building_code %in% closed_sbhc)
 
 # SBHC Popups
 SBHC_labels <- paste("<h2>",map_sf$campus_name,"</h2>",
@@ -107,7 +121,7 @@ leaflet() %>%
   # Default Base Layer - poverty
   addPolygons(data = school_dist_shp,
               fillColor = ~poverty_pal(percent_poverty),
-              fillOpacity = 1,
+              fillOpacity = 0.8,
               color = "black",
               opacity = 1,
               weight = 3,
@@ -121,7 +135,7 @@ leaflet() %>%
   # anaphylaxis
   addPolygons(data = school_dist_shp,
               fillColor = ~allergy_pal(percent_anaphylaxis),
-              fillOpacity = 1,
+              fillOpacity = 0.8,
               color = "black",
               opacity = 1,
               weight = 3,
@@ -135,7 +149,7 @@ leaflet() %>%
   # asthma
   addPolygons(data = school_dist_shp,
               fillColor = ~asthma_pal(percent_asthma),
-              fillOpacity = 1,
+              fillOpacity = 0.8,
               color = "black",
               opacity = 1,
               weight = 3,
@@ -149,7 +163,7 @@ leaflet() %>%
   # diabetes 1
   addPolygons(data = school_dist_shp,
               fillColor = ~diabetes1_pal(percent_diabetes1),
-              fillOpacity = 1,
+              fillOpacity = 0.8,
               color = "black",
               opacity = 1,
               weight = 3,
@@ -163,12 +177,13 @@ leaflet() %>%
   # diabetes 2
   addPolygons(data = school_dist_shp,
               fillColor = ~diabetes2_pal(percent_diabetes2),
-              fillOpacity = 1,
+              fillOpacity = 0.8,
               color = "black",
+              opacity = 1,
               weight = 3,
-              label = ~lapply(map_diabetes2_popup,HTML),
+              popup = ~lapply(map_diabetes2_popup,HTML),
               highlight = highlightOptions(color = "green", weight = 4),
-              labelOptions = labelOptions(
+              popupOptions = popupOptions(
                 style = list("font-weight" = "normal", padding = "3px 8px"),
                 textsize = "15px",
                 direction = "auto"),
@@ -189,7 +204,7 @@ leaflet() %>%
                    popup = ~lapply(SBHC_labels[which(!is.na(map_sf$campus_name))], HTML),
                    popupOptions = popupOptions(closeOnClick = TRUE),
                    label = ~campus_name,
-                   color = "green",
+                   color = ~marker_color,
                    group = "Schools with SBHCs") %>%
   # Layers control
   addLayersControl(
@@ -197,4 +212,11 @@ leaflet() %>%
     overlayGroups = c("Schools","Schools with SBHCs"),
     options = layersControlOptions(collapsed = TRUE),
     position = "topright"
-  )
+  ) %>%
+  htmlwidgets::onRender("
+    function(el, x) {
+      this.on('baselayerchange', function(e) {
+        e.layer.bringToBack();
+      })
+    }
+  ")
