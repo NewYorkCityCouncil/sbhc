@@ -1,12 +1,8 @@
-library(tidycensus)
-library(tigris)
-library(tidyverse)
-library(sf)
-library(ggiraph)
-library(patchwork)
-# run 01_prepare-data.R first - need school_dist_shp, map_sf
 
-# grap # sbhcs per dis
+# run 01_prepare-data.R first - need school_dist_shp, map_sf
+source("code/01_prepare-data.R")
+
+# graph # sbhcs per dis
 ll12_21 <- read_excel("data/input/Local Law 12 School Year 2021-22.xlsx", sheet = "Reports_Data", skip = 1)
 ll12_21_merge <- data.frame(school_dis = as.numeric(ll12_21$`Geographic Community School District`),
                             num_sbhcs = ll12_21$`Total SBHCs`)
@@ -52,12 +48,14 @@ p_plot <- ggplot(school_dist_shp,
        x = "Percent Poverty",
        y = "Total School Based Health Centers")
 
-girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>%
+map_plot <- girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
                  opts_selection(
                    css = "fill:cyan;",
                    only_shiny = FALSE)
   )
+
+htmltools::save_html(map_plot, "visuals/poverty-correlation-map_interactive.html")
 
 # ---- Asthma x SBHCs ----
 
@@ -91,9 +89,11 @@ a_plot <- ggplot(school_dist_shp,
        x = "Percent Asthma",
        y = "Total School Based Health Centers")
 
-girafe(ggobj = a_plot + a_map, width_svg = 10, height_svg = 5.5)  %>%
+map_plot <- girafe(ggobj = a_plot + a_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
                  opts_selection(
                    css = "fill:cyan;",
                    only_shiny = FALSE)
   )
+
+htmltools::save_html(map_plot, "visuals/asthma-correlation-map_interactive.html")
