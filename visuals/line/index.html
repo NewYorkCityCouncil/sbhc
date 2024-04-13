@@ -5,9 +5,7 @@
         <title>Number of SBHC Since 2016</title>
 
 
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
-     <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
-     <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
 
     </head>
@@ -43,7 +41,7 @@ var myChart = new Chart(ctx, {
             borderWidth: 0,
             hoverBackgroundColor: "#2F56A6",
             hoverBorderColor: "#eeeeee",
-           data: [{x:0,y:144},{x:30,y:154},{x:61,y:164},{x:91,y:158},{x:122,y:188},{x:153,y:162},{x:184,y:147},{x:215,y:138}]
+           data: [{x:0,y:144},{x:30,y:154},{x:61,y:164},{x:91,y:158},{x:153,y:188},{x:184,y:162},{x:215,y:147},{x:246,y:138}]
          //  data: [144,154,164,158,188,162,147,138]
         }]
 
@@ -54,7 +52,7 @@ var myChart = new Chart(ctx, {
         callbacks: {
           label: function(tooltipItem, data) {
             var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' delays' ;
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' SBHC' ;
           }
         }
       },
@@ -136,7 +134,7 @@ var myChart = new Chart(ctx, {
              xMin: "2018-2019",
              xMax: "2021-2022",
              yMin: 0,
-             yMax: 700,
+             yMax: 200,
              backgroundColor: "rgba(230, 230, 230, 0.5)",
              borderColor: "rgb(230, 230, 230)",
              borderWidth: 1,
