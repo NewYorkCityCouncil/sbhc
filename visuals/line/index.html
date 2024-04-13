@@ -32,7 +32,7 @@ var ctx = document.getElementById("line11");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-  labels: ["2016-2017","2017-2018","2018-2019","2019-2020","2021-2022","2022-2023","2023-2024"],
+  labels: ["2015-2016","2016-2017","2017-2018","2018-2019","2019-2020","2020-2021","2021-2022","2022-2023","2023-2024"],
         datasets: [{
             label: 'Delays Per Month Sept 2015 – Jan 2020',
             pointBackgroundColor: ['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E"],
@@ -43,7 +43,7 @@ var myChart = new Chart(ctx, {
             borderWidth: 0,
             hoverBackgroundColor: "#82C91E",
             hoverBorderColor: "#eeeeee",
-        //   data: [{x:0,y:144},{x:30,y:154},{x:61,y:164},{x:91,y:162},{x:122,y:147},{x:153,y:138}]
+        //   data: [{x:0,y:144},{x:30,y:154},{x:61,y:164},{x:91,y:158},{x:122,y:188},{x:153,y:162}, {x:184,y:147},{x:215,y:138}]
            data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,623,621,669,658,624,693,631,545,558,493,631,662,630,601,477]
         }]
 
@@ -64,7 +64,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return value.toLocaleString('en-US')+ ' delays';
+              return value.toLocaleString('en-US')+ ' SBHC';
             }
           }
         }],
@@ -133,7 +133,7 @@ var myChart = new Chart(ctx, {
              type: "box",
              xScaleID: "x-axis-0",
              yScaleID: "y-axis-0",
-             xMin: "2017-2018",
+             xMin: "2018-2019",
              xMax: "2021-2022",
              yMin: 0,
              yMax: 700,
