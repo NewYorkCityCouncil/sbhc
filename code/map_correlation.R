@@ -16,12 +16,16 @@ rm(ll12_21_merge)
 map_sf <- map_sf %>%
   filter(is.na(campus_name))
 
+#st_crs(school_dist_shp) = 4326
+
 # ---- Poverty x Total SBHCs ----
 
 p_map <- ggplot(NULL) + 
   geom_sf_interactive(data = school_dist_shp, size = 0.1, 
                       aes(fill = percent_poverty,
                           data_id = school_dis)) +
+  geom_sf_label(data=school_dist_shp, aes(label = school_dis), 
+                label.size  = NA, alpha = 0) +
   # geom_point(data = map_sf, # add schools
   #            aes(x = longitude, y = latitude,
   #                col="grey", alpha = 0.2)) + 
@@ -32,7 +36,10 @@ p_map <- ggplot(NULL) +
   theme(axis.line=element_blank(),
         axis.text.x=element_blank(),
         axis.text.y=element_blank()) +
-  labs(fill = "Percent Poverty") 
+  labs(fill = "Percent Poverty",
+       x = NULL,
+       y = NULL) 
+
 
 p_plot <- ggplot(school_dist_shp, 
        aes(x = percent_poverty, y = num_sbhcs, color = percent_poverty,
@@ -51,7 +58,7 @@ p_plot <- ggplot(school_dist_shp,
 map_plot <- girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
                  opts_selection(
-                   css = "fill:cyan;",
+                   css = "fill:moccasin;",
                    only_shiny = FALSE)
   )
 
@@ -63,6 +70,8 @@ a_map <- ggplot(NULL) +
   geom_sf_interactive(data = school_dist_shp, size = 0.1, 
                       aes(fill = percent_asthma,
                           data_id = school_dis)) +
+  geom_sf_label(data=school_dist_shp, aes(label = school_dis), 
+                label.size  = NA, alpha = 0) +
   # geom_point(data = map_sf, # add schools
   #            aes(x = longitude, y = latitude,
   #                col="grey", alpha = 0.2)) + 
@@ -73,7 +82,9 @@ a_map <- ggplot(NULL) +
   theme(axis.line=element_blank(),
         axis.text.x=element_blank(),
         axis.text.y=element_blank()) +
-  labs(fill = "Percent Asthma") 
+  labs(fill = "Percent Asthma",
+       x = NULL,
+       y = NULL) 
 
 a_plot <- ggplot(school_dist_shp, 
                  aes(x = percent_asthma, y = num_sbhcs, color = percent_asthma,
@@ -92,7 +103,7 @@ a_plot <- ggplot(school_dist_shp,
 map_plot <- girafe(ggobj = a_plot + a_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
                  opts_selection(
-                   css = "fill:cyan;",
+                   css = "fill:moccasin;",
                    only_shiny = FALSE)
   )
 
