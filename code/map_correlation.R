@@ -45,7 +45,8 @@ p_plot <- ggplot(school_dist_shp,
        aes(x = percent_poverty, y = num_sbhcs, color = percent_poverty,
            data_id = school_dis)) + 
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         show.legend = FALSE) + 
+                         show.legend = FALSE,
+                         aes(tooltip = paste0("SBHCs: ", num_sbhcs))) + 
   scale_color_distiller(direction = 1) +
   # scale_y_log10() + 
   scale_x_continuous(labels = scales::percent) +
