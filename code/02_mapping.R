@@ -13,7 +13,7 @@ map_poverty_popup <- paste("<h2>","School District:",school_dist_shp$school_dis,
 
 poverty_cuts <- classIntervals(var = school_dist_shp$percent_poverty,n=3)
 poverty_pal = councildown::colorBin(
-  palette = "warm",
+  palette = "bw",
   bins = poverty_cuts$brks,
   domain = school_dist_shp$percent_poverty,
   na.color = "#FFFFFF"
@@ -28,7 +28,7 @@ map_allergy_popup <- paste("<h2>","School District:",school_dist_shp$school_dis,
 
 allergy_cuts <- classIntervals(var = school_dist_shp$percent_anaphylaxis,n=3)
 allergy_pal = councildown::colorBin(
-  palette = "warm",
+  palette = "bw",
   bins = allergy_cuts$brks,
   domain = school_dist_shp$percent_anaphylaxis,
   na.color = "#FFFFFF"
@@ -43,7 +43,7 @@ map_asthma_popup <- paste("<h2>","School District:",school_dist_shp$school_dis,"
 
 asthma_cuts <- classIntervals(var = school_dist_shp$percent_asthma,n=3)
 asthma_pal = councildown::colorBin(
-  palette = "warm",
+  palette = "bw",
   bins = asthma_cuts$brks,
   domain = school_dist_shp$percent_asthma,
   na.color = "#FFFFFF"
@@ -58,7 +58,7 @@ map_diabetes1_popup <- paste("<h2>","School District:",school_dist_shp$school_di
 
 diabetes1_cuts <- classIntervals(var = school_dist_shp$percent_diabetes1,n=3)
 diabetes1_pal = councildown::colorBin(
-  palette = "warm",
+  palette = "bw",
   bins = diabetes1_cuts$brks,
   domain = school_dist_shp$percent_diabetes1,
   na.color = "#FFFFFF"
@@ -73,11 +73,23 @@ map_diabetes2_popup <- paste("<h2>","School District:",school_dist_shp$school_di
 
 diabetes2_cuts <- classIntervals(var = school_dist_shp$percent_diabetes2,n=3)
 diabetes2_pal = councildown::colorBin(
-  palette = "warm",
+  palette = "bw",
   bins = diabetes2_cuts$brks,
   domain = school_dist_shp$percent_diabetes2,
   na.color = "#FFFFFF"
 )
+
+## Size based on total enrollment
+#total_enrollment_cuts <- classIntervals(var = map_sf %>% filter(!is.na(total_enrolled)) %>% pull(total_enrolled),n=3)
+#
+#map_sf <- map_sf %>%
+#  mutate(size_enrolled = cut(total_enrolled,
+#                             labels = c("3","7","10"),
+#                             breaks = total_enrollment_cuts$brks,
+#                             include.lowest = T,
+#                             right = F))
+#map_sf$size_enrolled <- as.numeric(map_sf$size_enrolled)
+#map_sf[which(is.na(map_sf$size_enrolled)),"size_enrolled"] <- 2
 
 #####
 ### Marker Labels
@@ -86,33 +98,49 @@ diabetes2_pal = councildown::colorBin(
 # Separate the dataset
 # Schools w/o SBHC or SMHC
 map_sf <- map_sf %>%
-  mutate(marker_color = case_when(
-    building_code %in% closed_sbhc ~ "red",
-    !(building_code %in% closed_sbhc) & !is.na(campus_name) & is.na(services_provided) ~ "green",
-    !(building_code %in% closed_sbhc) & !is.na(campus_name) & !is.na(services_provided) ~ "purple",
-    is.na(campus_name) & !is.na(services_provided) ~ "blue",
-    TRUE ~ "black"
+  mutate(marker_type = case_when(
+    building_code %in% closed_sbhc | grepl("Temporarily Closed",campus_name) ~ "X",
+    !is.na(services_provided) & !is.na(campus_name) ~"filledcircle",
+    !is.na(services_provided) ~ "circle",
+    !is.na(campus_name) ~ "fill",
+    TRUE ~ "dot"
   ))
 
-s_wo_hc_df <- map_sf %>%
-  filter()
-# Schools w/ SBHC
-s_w_sbhc_df <- 
-# Closed from '23
-closed_df <- map_sf %>%
-  filter(building_code %in% closed_sbhc)
+# Marker Popups
+map_sf <- map_sf %>%
+  mutate(marker_popups = case_when(
+    is.na(campus_name) & is.na(services_provided) ~ paste0('<b style="font-size: large">',top_school_enrolled,"</b><br>",
+                                                          '<a style="font-size: small">',proper(primary_address), ", ",
+                                                          proper(city),'</a>',
+                                                          "<br>", "Total Enrollment: ",prettyNum(total_enrolled, big.mark = ','),"<br>",
+                                                          "<hr>",
+                                                          "<b>","Schools:","</b><br>",
+                                                          gsub("\\|","<br>",open_schools)),
+    is.na(campus_name) & !is.na(services_provided) ~ paste0('<b style="font-size: large">',top_school_enrolled,"</b><br>",
+                                                            '<a style="font-size: small">',proper(primary_address), ", ",
+                                                            proper(city),'</a>',
+                                                            "<br>", "Total Enrollment: ",prettyNum(total_enrolled, big.mark = ','),"<br>",
+                                                            "<hr>",
+                                                            "<b>","Schools:","</b><br>",
+                                                            gsub("\\|","<br>",open_schools),"<br>",
+                                                            '<b>',"Services Provided:","</b><br>",
+                                                            gsub(",","<br>",services_provided)),
+    TRUE ~ paste0('<b style="font-size: large">',campus_name,"</b><br>",
+                                       '<a style="font-size: small">',proper(primary_address), ", ",
+                                       proper(city),'</a>',
+                                       "<br>","Total Enrollment: ",prettyNum(total_enrolled, big.mark = ','),"<br>",
+                                       "<hr>",
+                                       "<b>","Schools Served:","</b><br>",
+                                       gsub("\\|","<br>",schools_served),"<br>",
+                                       '<b>',"Services Provided:","</b><br>",
+                                       gsub(",","<br>",services_provided))))
 
-# SBHC Popups
-SBHC_labels <- paste("<h2>",map_sf$campus_name,"</h2>",
-                    "<b>","Schools:","</b><br>",
-                    gsub(",","<br>",map_sf$open_schools),
-                    "<hr>",
-                    "<b>","Schools Served:","</b><br>",
-                    gsub(",","<br>",map_sf$schools_served),"<br>",
-                    '<b style="font-size:14px;">',"Services Provided:","</b><br>",
-                    gsub(",","<br>",map_sf$services_provided))
-
-
+# set size legend features
+colors <- rep("grey",4)
+labels <- c("NA", "small", "medium", "large")
+sizes <- c(1, 3, 7, 10)
+shapes <- rep("circle",4)
+borders <- rep("transparent",4)
 
 # Leaflet Map
 leaflet() %>%
@@ -121,13 +149,13 @@ leaflet() %>%
   # Default Base Layer - poverty
   addPolygons(data = school_dist_shp,
               fillColor = ~poverty_pal(percent_poverty),
-              fillOpacity = 0.8,
+              fillOpacity = 0.5,
               color = "black",
               opacity = 1,
               weight = 3,
-              label = ~lapply(map_poverty_popup,HTML),
+              popup = ~lapply(map_poverty_popup,HTML),
               highlight = highlightOptions(color = "green", weight = 4),
-              labelOptions = labelOptions(
+              popupOptions = popupOptions(
                 style = list("font-weight" = "normal", padding = "3px 8px"),
                 textsize = "15px",
                 direction = "auto"),
@@ -135,13 +163,13 @@ leaflet() %>%
   # anaphylaxis
   addPolygons(data = school_dist_shp,
               fillColor = ~allergy_pal(percent_anaphylaxis),
-              fillOpacity = 0.8,
+              fillOpacity = 0.5,
               color = "black",
               opacity = 1,
               weight = 3,
-              label = ~lapply(map_allergy_popup,HTML),
+              popup = ~lapply(map_allergy_popup,HTML),
               highlight = highlightOptions(color = "green", weight = 4),
-              labelOptions = labelOptions(
+              popupOptions = popupOptions(
                 style = list("font-weight" = "normal", padding = "3px 8px"),
                 textsize = "15px",
                 direction = "auto"),
@@ -149,13 +177,13 @@ leaflet() %>%
   # asthma
   addPolygons(data = school_dist_shp,
               fillColor = ~asthma_pal(percent_asthma),
-              fillOpacity = 0.8,
+              fillOpacity = 0.5,
               color = "black",
               opacity = 1,
               weight = 3,
-              label = ~lapply(map_asthma_popup,HTML),
+              popup = ~lapply(map_asthma_popup,HTML),
               highlight = highlightOptions(color = "green", weight = 4),
-              labelOptions = labelOptions(
+              popupOptions = popupOptions(
                 style = list("font-weight" = "normal", padding = "3px 8px"),
                 textsize = "15px",
                 direction = "auto"),
@@ -163,13 +191,13 @@ leaflet() %>%
   # diabetes 1
   addPolygons(data = school_dist_shp,
               fillColor = ~diabetes1_pal(percent_diabetes1),
-              fillOpacity = 0.8,
+              fillOpacity = 0.5,
               color = "black",
               opacity = 1,
               weight = 3,
-              label = ~lapply(map_diabetes1_popup,HTML),
+              popup = ~lapply(map_diabetes1_popup,HTML),
               highlight = highlightOptions(color = "green", weight = 4),
-              labelOptions = labelOptions(
+              popupOptions = popupOptions(
                 style = list("font-weight" = "normal", padding = "3px 8px"),
                 textsize = "15px",
                 direction = "auto"),
@@ -188,31 +216,113 @@ leaflet() %>%
                 textsize = "15px",
                 direction = "auto"),
               group = "diabetes2") %>%
-  # SBHC marker layers
+  # Marker layers
+  # Schools w/o SBHC or Mental Health Services
   addCircleMarkers(data = map_sf %>%
-                     filter(is.na(campus_name)),
+                     filter(marker_type == "dot"),
              lng = ~longitude,
              lat = ~latitude,
-             radius = 0.2,
-             label = ~building_code,
-             group = "Schools") %>%
+             radius = 2.5,
+             label = ~top_school_enrolled,
+             labelOptions = labelOptions(textsize = "12px"),
+             color = 'black',
+             fillOpacity = 1,
+             stroke = FALSE,
+             popup = ~lapply(marker_popups, HTML),
+             group = "Schools w/o Services") %>%
+  # Schools w/ Mental Health Services
   addCircleMarkers(data = map_sf %>%
-                     filter(!is.na(campus_name)),
+                     filter(marker_type %in% c("circle","filledcircle")),
                    lng = ~longitude,
                    lat = ~latitude,
-                   radius = 5,
-                   popup = ~lapply(SBHC_labels[which(!is.na(map_sf$campus_name))], HTML),
+                   radius = 4,
+                   popup = ~lapply(marker_popups, HTML),
+                   popupOptions = popupOptions(closeOnClick = TRUE),
+                   label = ~top_school_enrolled,
+                   labelOptions = labelOptions(textsize = "12px"),
+                   color = "blue",
+                   stroke = TRUE,
+                   weight = 2,
+                   opacity = 1,
+                   fillColor = "cyan",
+                   fill = ~ifelse(marker_type == "filledcircle", TRUE,FALSE),
+                   fillOpacity = 1,
+                   group = "Schools w/ Mental Health Services") %>%
+  # Schools w/ SBHCs
+  addCircleMarkers(data = map_sf %>%
+                     filter(marker_type %in% c("fill","filledcircle")),
+                   lng = ~longitude,
+                   lat = ~latitude,
+                   radius = 4,
+                   popup = ~lapply(marker_popups, HTML),
                    popupOptions = popupOptions(closeOnClick = TRUE),
                    label = ~campus_name,
-                   color = ~marker_color,
-                   group = "Schools with SBHCs") %>%
+                   labelOptions = labelOptions(textsize = "12px"),
+                   color = "blue",
+                   stroke = ~ifelse(marker_type == "filledcircle", TRUE,FALSE),
+                   opacity = 1,
+                   weight = 2,
+                   fillColor = "cyan",
+                   fillOpacity = 1,
+                   group = "Schools w/ SBHCs") %>%
+  # Closed SBHCs
+ addMarkers(data = map_sf %>%
+              filter(marker_type %in% c("X")),
+            lng = ~longitude,
+            lat = ~latitude,
+            icon = makeIcon(iconUrl = "visuals/icons/x-mark.png", iconWidth = 15, iconHeight = 15),
+            label = ~campus_name,
+            labelOptions = labelOptions(textsize = "12px"),
+            popup = ~lapply(marker_popups, HTML),
+            popupOptions = popupOptions(closeOnClick = TRUE),
+            group = "Schools w/ SBHCs") %>%
+  
   # Layers control
   addLayersControl(
     baseGroups = c("poverty","anaphylaxis","asthma","diabetes1","diabetes2"),
-    overlayGroups = c("Schools","Schools with SBHCs"),
+    overlayGroups = c("Schools w/o Services","Schools w/ Mental Health Services","Schools w/ SBHCs"),
     options = layersControlOptions(collapsed = TRUE),
     position = "topright"
   ) %>%
+  # Hide Markers Default
+  hideGroup(c("Schools w/o Services","Schools w/ Mental Health Services")) %>%
+  # Add legends
+  addLegend(pal = poverty_pal,
+            values = school_dist_shp$percent_poverty,
+            labFormat = labelFormat(suffix = "%",digits = 1,transform = function(x) 100 * x),
+            title = "Percent SD in Poverty",
+            layerId = "poverty") %>%
+  addLegend(pal = allergy_pal,
+            values = school_dist_shp$percent_anaphylaxis,
+            labFormat = labelFormat(suffix = "%",digits = 1,transform = function(x) 100 * x),
+            title = "Percent SD w/ Allergies",
+            layerId = "anaphylaxis") %>%
+  htmlwidgets::onRender("
+    function(el, x) {
+      var initialLegend = 'Outline' // Set the initial legend to be displayed by layerId
+      var myMap = this;
+      for (var legend in myMap.controls._controlsById) {
+        var el = myMap.controls.get(legend.toString())._container;
+        if(legend.toString() === initialLegend) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        };
+      };
+    myMap.on('baselayerchange',
+      function (layer) {
+        for (var legend in myMap.controls._controlsById) {
+          var el = myMap.controls.get(legend.toString())._container;
+          if(legend.toString() === layer.name) {
+            el.style.display = 'block';
+          } else {
+            el.style.display = 'none';
+          };
+        };
+      });
+    }")
+  
+  #addLegendCustom(colors, labels, sizes, shapes, borders, title = "school size",position = "bottomright")
   htmlwidgets::onRender("
     function(el, x) {
       this.on('baselayerchange', function(e) {
@@ -220,3 +330,5 @@ leaflet() %>%
       })
     }
   ")
+  
+  
