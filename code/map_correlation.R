@@ -49,10 +49,10 @@ p_plot <- ggplot(school_dist_shp,
            data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         show.legend = FALSE,
                          aes(tooltip = paste0("<strong>School District: </strong>", school_dis, "<br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
-                                              "Poverty: ", round(percent_poverty*100,0), "%"))) + 
+                                              "Poverty: ", round(percent_poverty*100,0), "%")),
+                         show.legend=FALSE) + 
   scale_color_distiller(direction = 1) +
   # scale_y_log10() + 
   scale_x_continuous(labels = scales::percent) +
