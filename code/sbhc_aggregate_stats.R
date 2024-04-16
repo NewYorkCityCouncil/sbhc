@@ -47,7 +47,7 @@ sbhc_data %>%
   kable_material(c("striped", "hover")) %>% 
   save_kable("../sbhc/visuals/melissa/sponsor_table.html")
 
-
+# Read in
 sbhc_providers <- read_excel("../sbhc/data/input/Local\ Law\ 12\ School\ Year\ 2021-22.xlsx", sheet=2)
 
 sbhc_providertype_2023 <- sbhc_providers %>% select(BLDG, Sponsor, SiteName, `Provider Type`) %>% right_join(sbhc_data, by=c("BLDG"="building_code"))
