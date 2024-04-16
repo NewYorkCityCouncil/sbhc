@@ -1,71 +1,137 @@
-library(readxl)
-library(ggplot2)
-library(dplyr)
 library(councildown)
+library(gtExtras)
+library(plotly)
+library(htmlwidgets)
+library(janitor)
+library(readxl)
+library(kableExtra)
 
-agg_sbhc <- read_excel("/Users/nycc/Desktop/sbhc_aggregate_data.xlsx", sheet=1)
-agg_sbhc_2 <- read_excel("/Users/nycc/Desktop/sbhc_aggregate_data.xlsx", sheet=2)
+map_sf <- read.csv("../sbhc/data/output/map_sf.csv")
+
+# Read in SBHC data
+sbhc <- read.csv("../sbhc/data/input/nyc_sbhc_23-24.csv") %>%
+  clean_names() %>%
+  mutate(bldg = trimws(bldg,which = "both"))
+
+# Read in SBHC 2022 data
+sbhc_22 <- read.csv("../sbhc/data/input/nyc_sbhc_22-23.csv") %>%
+  clean_names() %>%
+  mutate(clean_bldg = trimws(building_code_2023,which = "both"))
+
+# Which ones are no longer in the 2023-2024 SBHC?
+closed_sbhc <- sbhc_22$clean_bldg[which(is.element(sbhc_22$clean_bldg,unique(sbhc$bldg)) == FALSE)]
+
+closed_sbhc_merge <- data.frame(building_code = closed_sbhc,
+                                campus_name = c("[Closed] Fredrick Douglass Academy",
+                                                "[Closed] Grand Street Campus",
+                                                "[Closed] IS 145",
+                                                "[Closed] IS 49 Campus",
+                                                "[Closed] Norman Thomas Campus",
+                                                "[Closed] PS 161 Pedro Albizu Campos",
+                                                "[Closed] PS 197 Russwurm Campus",
+                                                "[Closed] Springfield Gardens Campus",
+                                                "[Closed] PS 192 Campus"),
+                                sbhc_sponsor = c(rep("H+H Gotham",8), "Heritage Health Care Center"))
+
+sbhc_data <- map_sf %>% 
+  filter(!is.na(campus_name)) %>%
+  filter(!building_code %in% closed_sbhc)
+
+# There are 18 sponsors - Montefiore medical center has the most sbhc and top 3 sponsors have 50.8% of all the sbhc
+sbhc_data %>% 
+  group_by(sbhc_sponsor) %>%
+  summarize(count=n()) %>%
+  arrange(desc(count)) %>%
+  mutate(percent=round((count/sum(count))*100,0), percent=paste0(percent,"%")) %>%
+  kbl(align="lrr", booktabs = TRUE, col.names = c("Sponsor", "# SBHC", "Percent")) %>%
+  kable_material(c("striped", "hover")) %>% 
+  save_kable("../sbhc/visuals/melissa/sponsor_table.html")
+
+
+sbhc_providers <- read_excel("../sbhc/data/input/Local\ Law\ 12\ School\ Year\ 2021-22.xlsx", sheet=2)
+
+sbhc_providertype_2023 <- sbhc_providers %>% select(BLDG, Sponsor, SiteName, `Provider Type`) %>% right_join(sbhc_data, by=c("BLDG"="building_code"))
+sbhc_providertype_2023$`Provider Type` <- ifelse(sbhc_providertype_2023$BLDG=="Q452","Federally Qualified Health Center",sbhc_providertype_2023$`Provider Type`)
+
+# There are 3 provider types, majority of sbhc are federally qualified health centers
+sbhc_providertype_2023 %>%
+  group_by(`Provider Type`) %>%
+  summarize(count=n()) %>%
+  arrange(desc(count)) %>%
+  mutate(percent=(count/sum(count))*100)
+
+# 2023-24
+bar_chart <- sbhc_providertype_2023 %>%
+  group_by(`Provider Type`) %>%
+  summarize(count=n()) %>%
+  arrange(desc(count)) %>%
+  mutate(percent=(count/sum(count))*100) %>%
+  ggplot(aes(x=reorder(`Provider Type`,-count), y=percent, label=percent, fill = c("#2F56A6","grey","black"))) + 
+  geom_bar(stat="identity") + 
+  councildown::scale_color_nycc() + 
+  scale_x_discrete(labels= scales::label_wrap(18)) +
+  #coord_flip() +
+  labs( 
+    x = "", 
+    y = "Percent", 
+    title = "Percent of School Based Health Centers by Provider Type") +
+  #geom_text(size = 4, aes(label = paste0(round(percent),"%"), vjust = -1, hjust=0.5))+ 
+  scale_y_continuous(
+    breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80),
+    label = c("0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%")
+  ) +
+  theme(legend.position="none", 
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        #panel.grid.major.y = element_line(colour = "#E6E6E6"),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "#666666"),
+        axis.title.x = element_text(margin = 
+                                      margin(t = 10, r = 0, b = 0, l = 0)),
+        #        text = element_text(family = "Open Sans"),
+        axis.text.y = element_text(size = 12, 
+                                   margin = margin(t = 0, r = 10, b = 0, l = 0)),
+        
+        axis.text.x = element_text(size = 12, 
+                                   margin = margin(t = 10, r = 0, b = 0, l = 0)),
+        plot.subtitle=element_text(size=12),
+        plot.title = element_text(family = "Georgia",size = 14)) + 
+  aes(text=map(paste(paste0(count, " (", round(percent),"%",")")), HTML))
+
+ggplotly(bar_chart, tooltip = c("text")) %>% 
+  saveWidget(file = "../sbhc/visuals/melissa/bar_chart.html") #htmltools::save_html("/Users/mel/Desktop/bar_chart.html")
+
+
+over_time <- read_excel("../sbhc/data/input/sbhc_aggregate_data.xlsx")
 
 # over time
-agg_sbhc %>%
+over_time %>%
   ggplot(aes(x=year, y = num_sbhc)) + 
   geom_point() +
-  geom_smooth(method="loess") +
+  geom_line() +
   scale_color_nycc()
-    
-agg_sbhc_2 %>% 
-  tidyr::drop_na() %>%
-  filter(provider_type!="total") %>%
-  mutate(relevel_provider=factor(provider_type, levels = c("diagnostic_and_treatment_centers","hospital","fed_qualifed_centers"))) %>%
-  ggplot(aes(x=year, y=count, fill=relevel_provider, label=count)) + 
-  geom_col() + 
-  scale_color_nycc() + 
-  theme(legend.title = element_blank(), legend.position="top") +
-  geom_text(size=3,
-    aes(label = after_stat(y), group = year), 
-    stat = 'summary', fun = sum, vjust = 0.5, hjust=-0.2
-  ) + 
-  guides(colour = guide_legend(nrow = 2)) +
-  coord_flip() +
-  xlab("") +
-  ylab("Number of SBHC by Provider Type")
 
-# 2021-2022
-agg_sbhc_2 %>% 
-  tidyr::drop_na() %>%
-  filter(provider_type!="total", year=="2021-2022") %>%
-  mutate(relevel_provider=factor(provider_type, levels = c("diagnostic_and_treatment_centers","hospital","fed_qualifed_centers"))) %>%
-  #mutate(relevel_provider=factor(provider_type, levels = c("fed_qualifed_centers", "hospital", "diagnostic_and_treatment_centers"))) %>%
-  ggplot(aes(x=relevel_provider, y=count, label=count, fill=relevel_provider)) + 
-  geom_bar(stat="identity") + 
-  scale_color_nycc() + 
-  theme(legend.title = element_blank(), legend.position="top") +
-  geom_text(size=3,
-            aes(label = after_stat(y), group = year), 
-            stat = 'summary', fun = sum, vjust = 0.5, hjust=-0.2
-  ) + 
-  guides(colour = guide_legend(nrow = 2)) +
-  coord_flip() +
-  xlab("") +
-  ylab("Number of SBHC by Provider Type") 
+library(sf)
 
-by_boro <- read_excel("/Users/nycc/Downloads/Local_Law_12_School_Year_2021-22.xlsx", sheet=2)
+council_dist_shp <- st_read(unzip_sf("https://data.cityofnewyork.us/api/geospatial/ve3w-z72j?method=export&format=Shapefile")) %>%
+  st_transform(st_crs(4326))
 
-by_boro$borough <- substring(by_boro$BLDG, 1, 1)
-
-by_boro %>% 
-  filter(borough!="T") %>%
-  group_by(borough) %>% 
-  summarize(num_sbhc=n(), total_site_enrollment=sum(`Campus Population`)) %>%
-  arrange(desc(num_sbhc)) %>%
-  mutate(percent=(num_sbhc/sum(num_sbhc))*100)
+sbhc_data %>%
+  st_as_sf(coords = c('longitude', 'latitude'), crs = st_crs(4326)) %>%
+  st_join(council_dist_shp) %>%
+  group_by(coun_dist) %>%
+  summarize(count=n()) %>%
+  arrange(desc(count)) %>%
+  mutate(percent=round((count/sum(count))*100),coun_dist=as.character(coun_dist), percent=paste0(percent,"%")) %>% 
+  select(coun_dist, count, percent) %>% 
+  st_drop_geometry() %>%
+  kbl(align="lrr", booktabs = TRUE, col.names = c("Council District", "# SBHC", "Percent")) %>%
+  kable_material(c("striped", "hover")) %>%
+  save_kable("/Users/mel/Desktop/cd_table.html")
+#htmltools::save_html("/Users/mel/Desktop/cd_table.html")
 
 
-by_boro %>%
-  group_by(GeographicalDistrict) %>% 
-  summarize(num_sbhc=n(), total_site_enrollment=sum(`Campus Population`)) %>%
-  arrange(desc(num_sbhc)) %>%
-  mutate(percent=(num_sbhc/sum(num_sbhc))*100)
 
 
 
