@@ -1,10 +1,10 @@
-library(councildown)
 library(gtExtras)
 library(plotly)
 library(htmlwidgets)
 library(janitor)
 library(readxl)
 library(kableExtra)
+library(councildown)
 
 map_sf <- read.csv("../sbhc/data/output/map_sf.csv")
 
@@ -37,10 +37,14 @@ sbhc_data <- map_sf %>%
   filter(!is.na(campus_name)) %>%
   filter(!building_code %in% closed_sbhc)
 
+sbhc_data[sbhc_data$building_code=="X161","total_enrolled"] <- 323
+sbhc_data[sbhc_data$building_code=="X098","total_enrolled"] <- 113
+sbhc_data[sbhc_data$building_code=="M506","total_enrolled"] <- 444
+
 # There are 18 sponsors - Montefiore medical center has the most sbhc and top 3 sponsors have 50.8% of all the sbhc
 sbhc_data %>% 
   group_by(sbhc_sponsor) %>%
-  summarize(count=n()) %>%
+  summarize(count=n(), enrollment=sum(total_enrolled)) %>%
   arrange(desc(count)) %>%
   mutate(percent=round((count/sum(count))*100,0), percent=paste0(percent,"%")) %>%
   kbl(align="lrr", booktabs = TRUE, col.names = c("Sponsor", "# SBHC", "Percent")) %>%
