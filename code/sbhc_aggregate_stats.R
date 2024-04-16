@@ -73,7 +73,7 @@ bar_chart <- sbhc_providertype_2023 %>%
   summarize(count=n()) %>%
   arrange(desc(count)) %>%
   mutate(percent=(count/sum(count))*100) %>%
-  ggplot(aes(x=reorder(`Provider Type`,-count), y=percent, label=percent, fill = c("#2F56A6","grey","black"))) + 
+  ggplot(aes(x=reorder(`Provider Type`,-count), y=percent, label=percent, fill = `Provider Type`)) + 
   geom_bar(stat="identity") + 
   councildown::scale_color_nycc() + 
   scale_x_discrete(labels= scales::label_wrap(18)) +
@@ -81,7 +81,7 @@ bar_chart <- sbhc_providertype_2023 %>%
   labs( 
     x = "", 
     y = "Percent", 
-    title = "Percent of School Based Health Centers by Provider Type") +
+    title = "") +
   #geom_text(size = 4, aes(label = paste0(round(percent),"%"), vjust = -1, hjust=0.5))+ 
   scale_y_continuous(
     breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80),
@@ -128,14 +128,14 @@ sbhc_data %>%
   st_as_sf(coords = c('longitude', 'latitude'), crs = st_crs(4326)) %>%
   st_join(council_dist_shp) %>%
   group_by(coun_dist) %>%
-  summarize(count=n()) %>%
+  summarize(count=n(), enrollment=sum(total_enrolled)) %>%
   arrange(desc(count)) %>%
-  mutate(percent=round((count/sum(count))*100),coun_dist=as.character(coun_dist), percent=paste0(percent,"%")) %>% 
-  select(coun_dist, count, percent) %>% 
+  mutate(percent=round((count/sum(count))*100),coun_dist=as.character(coun_dist), percent=paste0(percent,"%"), enrollment=scales::comma(enrollment)) %>% 
+  select(coun_dist, count, percent, enrollment) %>% 
   st_drop_geometry() %>%
-  kbl(align="lrr", booktabs = TRUE, col.names = c("Council District", "# SBHC", "Percent")) %>%
+  kbl(align="lrrr", booktabs = TRUE, col.names = c("Council District", "# SBHC", "Percent", "Students Enrolled")) %>%
   kable_material(c("striped", "hover")) %>%
-  save_kable("/Users/mel/Desktop/cd_table.html")
+  save_kable("../sbhc/visuals/melissa/cd_table.html")
 #htmltools::save_html("/Users/mel/Desktop/cd_table.html")
 
 
