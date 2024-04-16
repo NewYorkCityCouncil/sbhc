@@ -50,7 +50,7 @@ p_plot <- ggplot(school_dist_shp,
            data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         aes(tooltip = paste0("<strong>District: ", school_dis, "</strong><br>",
+                         aes(tooltip = paste0("<strong>District ", school_dis, "</strong><br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
                                               "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "Poverty: ", round(percent_poverty*100,0), "%"))) + 
