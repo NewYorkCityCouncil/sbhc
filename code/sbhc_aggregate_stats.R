@@ -1,4 +1,4 @@
-library(gtExtras)
+library(dplyr)
 library(plotly)
 library(htmlwidgets)
 library(janitor)
@@ -40,15 +40,18 @@ sbhc_data <- map_sf %>%
 sbhc_data[sbhc_data$building_code=="X161","total_enrolled"] <- 323
 sbhc_data[sbhc_data$building_code=="X098","total_enrolled"] <- 113
 sbhc_data[sbhc_data$building_code=="M506","total_enrolled"] <- 444
+sbhc_data[sbhc_data$sbhc_sponsor=="East Harlem Council For Human Services/Boriken Neighborhood Health Center","sbhc_sponsor"] <- "East Harlem Council For Human Service"
 
 # There are 18 sponsors - Montefiore medical center has the most sbhc and top 3 sponsors have 50.8% of all the sbhc
 sbhc_data %>% 
   group_by(sbhc_sponsor) %>%
   summarize(count=n(), enrollment=sum(total_enrolled)) %>%
   arrange(desc(count)) %>%
-  mutate(percent=round((count/sum(count))*100,0), percent=paste0(percent,"%")) %>%
-  kbl(align="lrr", booktabs = TRUE, col.names = c("Sponsor", "# SBHC", "Percent")) %>%
-  kable_material(c("striped", "hover")) %>% 
+  mutate(percent=round((count/sum(count))*100,0), percent=paste0(percent,"%"), enrollment=scales::comma(enrollment)) %>%
+  select(sbhc_sponsor, count, percent, enrollment) %>%
+  kable(align="lrrr", booktabs = TRUE, col.names = c("Sponsor", "# SBHC", "Percent", "Students Enrolled"), escape=FALSE) %>%
+  kable_material(c("striped", "hover")) %>%
+  kable_styling(full_width = FALSE) %>% 
   save_kable("../sbhc/visuals/melissa/sponsor_table.html")
 
 # Read in
