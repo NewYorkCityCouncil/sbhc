@@ -13,6 +13,14 @@ sbhc_22 <- read.csv("data/input/nyc_sbhc_22-23.csv") %>%
 # Which ones are no longer in the 2023-2024 SBHC?
 closed_sbhc <- sbhc_22$clean_bldg[which(is.element(sbhc_22$clean_bldg,unique(sbhc$bldg)) == FALSE)]
 
+# Merge for school districts
+sd_sbhc_merge <- sbhc %>%
+  filter(!grepl("Temporarily Closed",campus_name)) %>%
+  group_by(district) %>%
+  summarise(num_sbhc_schools_served = n(),
+            num_sbhc = n_distinct(campus_name)) %>%
+  rename(school_dis = district)
+
 # Read in Mental Health HC data
 #smhc <- read.socrata("https://data.cityofnewyork.us/resource/qxbt-vysj.json?$limit=9999999") %>%
 #  clean_names()
@@ -27,6 +35,12 @@ merge_df <- smhc %>%
   mutate(services_provided = paste(sort(unique(service)),collapse = ", ")) %>%
   filter(row_number() == 1) %>%
   select(building_code,services_provided)
+
+# Merge for school districts
+sd_smhc_merge <- smhc %>%
+  group_by(geographical_district_code) %>%
+  summarise(num_schools_smhc_served = n()) %>%
+  rename(school_dis = geographical_district_code)
 
 #sbhc_merge <- sbhc %>%
 #  left_join(merge_df, by = join_by(bldg == building_code))
@@ -88,6 +102,13 @@ school_building_sf <- school_sf %>%
          total_enrolled = sum(total_enrollment)) %>%
   filter(row_number() == 1) %>%
   select(building_code,open_schools,num_open_schools,top_school_enrolled,total_enrolled,primary_address,city,longitude,latitude)
+
+# Merge for school districts
+sd_school_merge <- school_sf %>%
+  filter(status_description == "Open") %>%
+  group_by(geographical_district_code) %>%
+  summarise(num_open_schools = n()) %>%
+  rename(school_dis = geographical_district_code)
 
 # Merge sbhc data with school buildings
 map_sf <- school_building_sf %>%
@@ -163,6 +184,17 @@ school_dist_shp <- school_dist_shp %>%
 
 school_dist_shp[nrow(school_dist_shp)+1,] <- dist_10
 
+# Add number of schools served and within school districts
+sd_sbhc_merge$school_dis <- as.character(sd_sbhc_merge$school_dis)
+sd_smhc_merge$school_dis <- as.character(sd_smhc_merge$school_dis)
+sd_school_merge$school_dis <- as.character(sd_school_merge$school_dis)
+
+school_dist_shp <- school_dist_shp %>%
+  mutate(school_dis = as.character(school_dis)) %>%
+  left_join(sd_sbhc_merge) %>%
+  left_join(sd_smhc_merge) %>%
+  left_join(sd_school_merge)
+
 # Add stats to school dist
 ll12_21 <- read_excel("data/input/Local Law 12 School Year 2021-22.xlsx", sheet = "Reports_Data", skip = 1)
 
@@ -175,7 +207,7 @@ ll12_21_merge <- data.frame(school_dis = ll12_21$`Geographic Community School Di
                             sbhc_students_served = ll12_21$...17
                             ) %>%
   slice(-nrow(.)) %>%
-  mutate(school_dis = as.numeric(school_dis))
+  mutate(school_dis = as.character(school_dis))
 
 school_dist_shp <- school_dist_shp %>%
   left_join(ll12_21_merge)
@@ -183,13 +215,16 @@ school_dist_shp <- school_dist_shp %>%
 # Use enrollment data
 enrollment_district <- read_excel("data/input/demographic-snapshot-2018-19-to-2022-23-(public).xlsx", sheet = "District") %>%
   mutate(school_dis = as.numeric(`Administrative District`)) %>%
+  # this will remove the special admin zones enrollment stats unfortunately
   filter(Year == "2021-22",
          school_dis <= 32) %>%
-  clean_names()
+  clean_names() %>%
+  mutate(school_dis = as.character(school_dis))
 
 school_dist_shp <- school_dist_shp %>%
   left_join(enrollment_district %>%
               select(school_dis,total_enrollment,number_poverty,percent_poverty,number_students_with_disabilities,percent_students_with_disabilities,economic_need_index))
+
 
 # Normalize/Percentage of students with the 4 diseases
 school_dist_shp <- school_dist_shp %>%
@@ -198,11 +233,16 @@ school_dist_shp <- school_dist_shp %>%
          percent_diabetes1 = diabetes1/total_enrollment,
          percent_diabetes2 = diabetes2/total_enrollment)
 
-# Make all empty to NAs
+# Make all empty service provided to NAs
 map_sf$services_provided[map_sf$services_provided==""] <- NA
 
+# Make all NAs to 0s in the num columns
+school_dist_shp <- school_dist_shp %>%
+  mutate(num_sbhc = ifelse(is.na(num_sbhc), 0, num_sbhc),
+         num_sbhc_schools_served = ifelse(is.na(num_sbhc_schools_served), 0, num_sbhc_schools_served))
+
 # Remove unused assets
-rm(merge_df,sbhc_merge,d79_codes,school_building_sf,school_long_lat_df,school_sf, dist_10,ll12_21,ll12_21_merge,enrollment_school,enrollment_district,closed_sbhc_merge)
+rm(merge_df,sd_sbhc_merge,sbhc_merge,sd_smhc_merge,d79_codes,sd_school_merge,school_building_sf,school_long_lat_df,school_sf, dist_10,ll12_21,ll12_21_merge,enrollment_school,enrollment_district,closed_sbhc_merge)
 
 # Save map and school district data as csvs
 #write_csv(map_sf,"data/output/map_sf.csv")
