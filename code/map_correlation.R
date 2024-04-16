@@ -1,4 +1,5 @@
 library(ggpubr)
+library(htmlwidgets)
 # run 01_prepare-data.R first - need school_dist_shp, map_sf
 source("code/01_prepare-data.R")
 
@@ -49,8 +50,9 @@ p_plot <- ggplot(school_dist_shp,
            data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         aes(tooltip = paste0("<strong>School District: </strong>", school_dis, "<br>",
+                         aes(tooltip = paste0("<strong>District: ", school_dis, "</strong><br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
+                                              "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "Poverty: ", round(percent_poverty*100,0), "%"))) + 
   scale_color_distiller(direction = 1) +
   guides(color="none")+
@@ -74,8 +76,8 @@ map_plot <- girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>
                  #opts_hover(css = "stroke-width: 4; opacity: 1; color:orange"),
                  opts_toolbar(pngname = "poverty_correlation")
   )
-
-htmltools::save_html(map_plot, "visuals/poverty-correlation-map_interactive.html")
+map_plot %>%
+  saveWidget(file = "visuals/poverty-correlation-map_interactive.html")
 
 # ---- Asthma x SBHCs ----
 
@@ -107,8 +109,9 @@ a_plot <- ggplot(school_dist_shp,
                      data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         aes(tooltip = paste0("<strong>School District: </strong>", school_dis, "<br>",
+                         aes(tooltip = paste0("<strong>District ", school_dis, "</strong><br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
+                                              "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "Asthma: ", round(percent_asthma*100,0), "%"))) + 
   scale_color_distiller(direction = 1) +
   guides(color="none")+
@@ -164,8 +167,9 @@ d1_plot <- ggplot(school_dist_shp,
                      data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         aes(tooltip = paste0("<strong>School District: </strong>", school_dis, "<br>",
+                         aes(tooltip = paste0("<strong>District ", school_dis, "</strong><br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
+                                              "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "Diabetes 1: ", round(percent_diabetes1*100,2), "%"))) + 
   scale_color_distiller(direction = 1) +
   guides(color="none") +
@@ -216,7 +220,8 @@ d2_plot <- ggplot(school_dist_shp,
                       data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         aes(tooltip = paste0("<strong>School District: </strong>", school_dis, "<br>",
+                         aes(tooltip = paste0("<strong>District ", school_dis, "</strong><br>",
+                                              "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
                                               "Diabetes 2: ", round(percent_diabetes2*100,2), "%"))) + 
   scale_color_distiller(direction = 1) +
@@ -268,7 +273,8 @@ an_plot <- ggplot(school_dist_shp,
                       data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
-                         aes(tooltip = paste0("<strong>School District: </strong>", school_dis, "<br>",
+                         aes(tooltip = paste0("<strong>District ", school_dis, "</strong><br>",
+                                              "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "SBHCs: ", num_sbhcs, "<br>", 
                                               "Anaphylaxis: ", round(percent_anaphylaxis*100,0), "%"))) + 
   scale_color_distiller(direction = 1) +
