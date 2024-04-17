@@ -1,6 +1,6 @@
 library(ggpubr)
 library(htmlwidgets)
-# run 01_prepare-data.R first - need school_dist_shp, map_sf
+# run 01_prepare-data.R first - need school_dist_shp
 source("code/01_prepare-data.R")
 
 # graph # sbhcs per dis
@@ -13,9 +13,9 @@ school_dist_shp <-
 rm(ll12_21)
 rm(ll12_21_merge)
 
-# filter map 
-map_sf <- map_sf %>%
-  filter(is.na(campus_name))
+# # filter map 
+# map_sf <- map_sf %>%
+#   filter(is.na(campus_name))
 
 #st_crs(school_dist_shp) = 4326
 
@@ -46,7 +46,7 @@ p_map <- ggplot(NULL) +
 
 
 p_plot <- ggplot(school_dist_shp, 
-       aes(x = percent_poverty, y = num_sbhcs, color = percent_poverty,
+       aes(x = percent_poverty, y = num_sbhcs/(total_enrollment/10000), color = percent_poverty,
            data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
@@ -62,7 +62,7 @@ p_plot <- ggplot(school_dist_shp,
   theme_nycc() +
   labs(color = "Percent Poverty",
        x = "Percent Poverty",
-       y = "Total School Based Health Centers")
+       y = "Number of School Based Health Centers per 10k Students")
 
 map_plot <- girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
@@ -105,7 +105,7 @@ a_map <- ggplot(NULL) +
        y = NULL) 
 
 a_plot <- ggplot(school_dist_shp, 
-                 aes(x = percent_asthma, y = num_sbhcs, color = percent_asthma,
+                 aes(x = percent_asthma, y = num_sbhcs/(total_enrollment/10000), color = percent_asthma,
                      data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
@@ -121,7 +121,7 @@ a_plot <- ggplot(school_dist_shp,
   theme_nycc() +
   labs(color = "Percent Asthma",
        x = "Percent Asthma",
-       y = "Total School Based Health Centers")
+       y = "Number of School Based Health Centers per 10k Students")
 
 map_plot <- girafe(ggobj = a_plot + a_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
@@ -163,7 +163,7 @@ d1_map <- ggplot(NULL) +
        y = NULL) 
 
 d1_plot <- ggplot(school_dist_shp, 
-                 aes(x = percent_diabetes1, y = num_sbhcs, color = percent_diabetes1,
+                 aes(x = percent_diabetes1, y = num_sbhcs/(total_enrollment/10000), color = percent_diabetes1,
                      data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
@@ -177,7 +177,7 @@ d1_plot <- ggplot(school_dist_shp,
   theme_nycc() +
   labs(color = "Percent Diabetes 1",
        x = "Percent Diabetes 1",
-       y = "Total School Based Health Centers")
+       y = "Number of School Based Health Centers per 10k Students")
 
 map_plot <- girafe(ggobj = d1_plot + d1_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
@@ -216,7 +216,7 @@ d2_map <- ggplot(NULL) +
        y = NULL) 
 
 d2_plot <- ggplot(school_dist_shp, 
-                  aes(x = percent_diabetes2, y = num_sbhcs, color = percent_diabetes2,
+                  aes(x = percent_diabetes2, y = num_sbhcs/(total_enrollment/10000), color = percent_diabetes2,
                       data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
@@ -230,7 +230,7 @@ d2_plot <- ggplot(school_dist_shp,
   theme_nycc() +
   labs(color = "Percent Diabetes 2",
        x = "Percent Diabetes 2",
-       y = "Total School Based Health Centers")
+       y = "Number of School Based Health Centers per 10k Students")
 
 map_plot <- girafe(ggobj = d2_plot + d2_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
@@ -269,7 +269,7 @@ an_map <- ggplot(NULL) +
        y = NULL) 
 
 an_plot <- ggplot(school_dist_shp, 
-                  aes(x = percent_anaphylaxis, y = num_sbhcs, color = percent_anaphylaxis,
+                  aes(x = percent_anaphylaxis, y = num_sbhcs/(total_enrollment/10000), color = percent_anaphylaxis,
                       data_id = school_dis)) + 
   stat_cor(method="pearson") +
   geom_point_interactive(size = (school_dist_shp$total_enrollment)/10000,
@@ -283,7 +283,7 @@ an_plot <- ggplot(school_dist_shp,
   theme_nycc() +
   labs(color = "Percent Anaphylaxis",
        x = "Percent Anaphylaxis",
-       y = "Total School Based Health Centers")
+       y = "Number of School Based Health Centers per 10k Students")
 
 map_plot <- girafe(ggobj = an_plot + an_map, width_svg = 10, height_svg = 5.5)  %>%
   girafe_options(opts_zoom(min = 1, max = 8),
