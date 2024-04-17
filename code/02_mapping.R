@@ -404,7 +404,7 @@ m <- leaflet() %>%
       });
     }")
 
-#mapshot(m,file="visuals/poverty_sbhc_map.png")
+#mapshot(m,file="visuals/sbhc_per_10k_map.png")
 
 # Top 3
 
