@@ -401,15 +401,45 @@ m <- leaflet() %>%
       });
     }")
 
-mapshot(m,file="visuals/poverty_sbhc_map.png")
+#mapshot(m,file="visuals/poverty_sbhc_map.png")
 
-  #addLegendCustom(colors, labels, sizes, shapes, borders, title = "school size",position = "bottomright")
-  htmlwidgets::onRender("
-    function(el, x) {
-      this.on('baselayerchange', function(e) {
-        e.layer.bringToBack();
-      })
-    }
-  ")
-  
+# Top 3
+
+school_dist_shp %>%
+  arrange(desc(total_enrollment)) %>%
+  slice(1:3)
+
+# ENROLLMENT
+# The top 3 largest school districts are 31, 2, and 24 with 61,838, 57,900, 54,197 people enrolled respectively.
+# Of these, only district 24 has a poverty percentage of greater than 70% and the other 2 has less than 60% in poverty. 
+# District 2 has the largest number of open schools of all districts and has 8 SBHCs serving 34 schools. District 31 and 24
+# have 4 and 2 SBHCs respectively, both serving only 7 schools out of 87 and 69 respectively.
+
+school_dist_shp %>%
+  arrange(desc(percent_poverty)) %>%
+  slice(1:3)
+
+# POVERTY
+# The top 3 school districts with the highest poverty percentage are 7, 12, and 9 with more than 91% of their students in
+# poverty. These districts have 8, 7, and 13 SBHCs serving 20, 29, and 37 schools out of 74, 60, and 88 respectively.
+
+school_dist_shp %>%
+  arrange(desc(percent_asthma)) %>%
+  slice(1:3)
+
+# ASTHMA
+# The top 3 school districts with the highest percentage of people with asthma are 5, 7, and 16 with more than 32% of
+# their students with asthma. These districts have 2, 8, and 0 SBHCs serving 3, 20, and 0 schools out of 45, 74, and 33 respectively.
+# District 16 may not have an SBHC as it is the lowest enrolled district with only 5,970 people. District 7 makes the top 3
+# in both poverty and asthma metrics.
+
+school_dist_shp %>%
+  arrange(desc(num_sbhc)) %>%
+  slice(1:3)
+
+lmtest = lm(num_sbhc~total_enrollment + num_open_schools + percent_poverty + percent_asthma, data = school_dist_shp) #Create the linear regression
+summary(lmtest) #Review the results
+
+# MOST SBHC Traits?
+
   

@@ -1,4 +1,4 @@
-# project_template
+# School-Based Health Centers
 a template repository for future github projects
 
 
@@ -18,9 +18,14 @@ An associated webpage for this analysis can be found [on the council website](ht
 ***  
 
 #### Data Sources 
-- [Storefronts Reported Vacant or Not (Filing Year 2020 - 2021)](https://data.cityofnewyork.us/City-Government/Storefronts-Reported-Vacant-or-Not-Filing-Year-202/92iy-9c3n)
+- [2023-2024 SBHCs](https://www.schools.nyc.gov/docs/default-source/default-document-library/list-of-nyc-school-based-health-centers-english)
+- [2022-2023 SBHCs](https://web.archive.org/web/20230811024348/https://www.schools.nyc.gov/docs/default-source/default-document-library/list-of-nyc-school-based-health-centers-english)
+- [?? Year SMHCs](data/input/mental-health-services-landscape-english.xlsx)
+- [2022-2023 School-Level Enrollment Data](data/input/demographic-snapshot-2018-19-to-2022-23-(public).xlsx)
+- [2024 School Locations/Information](data/input/Schooldata_24.csv)
+- [School Districts Shapefile](https://data.cityofnewyork.us/api/geospatial/r8nu-ymqj?method=export&format=Shapefile)
+- [2021-2022 LL12 School Disease Statistics](data/input/Local Law 12 School Year 2021-22.xlsx)
 
-- 2019 5-Year ACS Survey: *We used R package censusapi to get demographic data
 
 #### Methodology 
 
