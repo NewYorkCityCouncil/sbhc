@@ -10,7 +10,7 @@ An associated webpage for this analysis can be found [on the council website](ht
 - [2023-2024 SBHCs](https://www.schools.nyc.gov/docs/default-source/default-document-library/list-of-nyc-school-based-health-centers-english)
 - [2022-2023 SBHCs](https://web.archive.org/web/20230811024348/https://www.schools.nyc.gov/docs/default-source/default-document-library/list-of-nyc-school-based-health-centers-english)
 - [?? Year SMHCs](data/input/mental-health-services-landscape-english.xlsx)
-- [2022-2023 School-Level Enrollment Data](data/input/demographic-snapshot-2018-19-to-2022-23-(public).xlsx)
+- [2022-2023 School-Level Enrollment Data](https://data.cityofnewyork.us/Education/2017-18-2021-22-Demographic-Snapshot/c7ru-d68s/about_data)
 - [2024 School Locations/Information](data/input/Schooldata_24.csv)
 - [School Districts Shapefile](https://data.cityofnewyork.us/api/geospatial/r8nu-ymqj?method=export&format=Shapefile)
 - [2021-2022 LL12 School Disease Statistics](https://github.com/NewYorkCityCouncil/sbhc/blob/main/data/input/Local%20Law%2012%20School%20Year%202021-22.xlsx)
