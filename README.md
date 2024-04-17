@@ -1,21 +1,10 @@
-# School-Based Health Centers
-a template repository for future github projects
+### School-Based Health Center Closures
+Data analysis and visuals for NYCC 4.17.2024 [Oversight - School-Based Health Centers and School-Based Mental Health Clinics.']([https://legistar.council.nyc.gov/MeetingDetail.aspx?From=Alert&ID=980028&GUID=239563C5-9CA2-44A7-8E1D-A970A0556192](https://legistar.council.nyc.gov/MeetingDetail.aspx?ID=1183298&GUID=67BBB5EB-F168-4D9C-9198-190A0F6CC6BC&Options=info|&Search=)) hearing.
 
-
-## Basic Repo Structure Overview
-
-***
-
-## Readme Example
-
-
-
-### Analyzing Storefront Vacancies
-Data analysis and visuals for NYCC 6.9.22 ['Oversight - Combatting Commercial Vacancies'](https://legistar.council.nyc.gov/MeetingDetail.aspx?From=Alert&ID=980028&GUID=239563C5-9CA2-44A7-8E1D-A970A0556192) hearing.
-
-An associated webpage for this analysis can be found [on the council website](https://council.nyc.gov/data/vacant-storefronts/): 
+An associated webpage for this analysis can be found [on the council website](https://council.nyc.gov/data/school-based-health-center-closures/): 
 
 ***  
+
 
 #### Data Sources 
 - [2023-2024 SBHCs](https://www.schools.nyc.gov/docs/default-source/default-document-library/list-of-nyc-school-based-health-centers-english)
