@@ -13,7 +13,7 @@ An associated webpage for this analysis can be found [on the council website](ht
 - [2022-2023 School-Level Enrollment Data](data/input/demographic-snapshot-2018-19-to-2022-23-(public).xlsx)
 - [2024 School Locations/Information](data/input/Schooldata_24.csv)
 - [School Districts Shapefile](https://data.cityofnewyork.us/api/geospatial/r8nu-ymqj?method=export&format=Shapefile)
-- [2021-2022 LL12 School Disease Statistics](data/input/Local Law 12 School Year 2021-22.xlsx)
+- [2021-2022 LL12 School Disease Statistics]([data/input/Local Law 12 School Year 2021-22.xlsx](https://github.com/NewYorkCityCouncil/sbhc/blob/main/data/input/Local%20Law%2012%20School%20Year%202021-22.xlsx))
 
 
 #### Methodology 
