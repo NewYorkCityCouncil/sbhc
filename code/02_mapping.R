@@ -5,10 +5,13 @@ source('code/00_load_dependencies.R')
 ### Map Labels and chloropeth colors
 #####
 # Base layer - Total Enrollment
+school_dist_shp$sbhc10k <- school_dist_shp$num_sbhc/(school_dist_shp$total_enrollment/10000)
+
 map_total_enrollment_popup <- paste('<b style="font-size: large">',"School District:",school_dist_shp$school_dis,"</b><br>",
-                                    "<b>","Total Open Schools:</b>",prettyNum(school_dist_shp$num_open_schools, big.mark = ','),"<br>",
+                                    "<b>","Number of SBHCs per 10k Students: </b>",round(school_dist_shp$sbhc10k,2),"<br>",
+                                    "<b>","Total Schools:</b>",prettyNum(school_dist_shp$num_open_schools, big.mark = ','),"<br>",
                                     "<b>","Total Enrolled Students:</b>",prettyNum(school_dist_shp$total_enrollment, big.mark = ','),"<br>",
-                                    "<b>","Number of Open SBHC:</b>",prettyNum(school_dist_shp$num_sbhc, big.mark = ','),"<br>",
+                                    "<b>","Number of SBHC:</b>",prettyNum(school_dist_shp$num_sbhc, big.mark = ','),"<br>",
                                     "<b>","Number Schools SBHC Served:</b>",prettyNum(school_dist_shp$num_sbhc_schools_served, big.mark = ','),"<br>",
                                     "<b>","Number of Schools SMHC Served:</b>",prettyNum(school_dist_shp$num_schools_smhc_served, big.mark = ','),"<br>",
                                     "<hr>",
@@ -17,11 +20,11 @@ map_total_enrollment_popup <- paste('<b style="font-size: large">',"School Distr
                                     "<b>","Percent of Students with Diabetes 1:</b>",label_percent(accuracy = 0.01)(school_dist_shp$percent_diabetes1),"<br>",
                                     "<b>","Percent of Students with Diabetes 2:</b>",label_percent(accuracy = 0.01)(school_dist_shp$percent_diabetes2),"<br>")
 
-enrollment_cuts <- classIntervals(var = school_dist_shp$total_enrollment,n=3)
+enrollment_cuts <- classIntervals(var = school_dist_shp$sbhc10k,n=3)
 enrollment_pal = councildown::colorBin(
   palette = "bw",
   bins = enrollment_cuts$brks,
-  domain = school_dist_shp$total_enrollment,
+  domain = school_dist_shp$sbhc10k,
   na.color = "#FFFFFF"
 )
                                     
@@ -183,9 +186,9 @@ m <- leaflet() %>%
                                                                                                                                                        `font-weight` = "bold"))) %>%
   #addTiles() %>%
   # Overlay Groups
-  # Default Base Layer - total enrollment
+  # Default Base Layer - sbhc per 10k enrollment
   addPolygons(data = school_dist_shp,
-              fillColor = ~enrollment_pal(total_enrollment),
+              fillColor = ~enrollment_pal(sbhc10k),
               fillOpacity = 0.5,
               color = "black",
               opacity = 1,
@@ -348,7 +351,7 @@ m <- leaflet() %>%
   addLegend(pal = enrollment_pal,
             values = school_dist_shp$total_enrollment,
             labFormat = labelFormat(digits = 0, big.mark = ","),
-            title = "Total Enrollment in SD",
+            title = "SBHCs per 10k Students in SD",
             layerId = "enrollment") %>%
   addLegend(pal = poverty_pal,
             values = school_dist_shp$percent_poverty,
@@ -401,7 +404,7 @@ m <- leaflet() %>%
       });
     }")
 
-#mapshot(m,file="visuals/poverty_sbhc_map.png")
+#mapshot(m,file="visuals/sbhc_per_10k_map.png")
 
 # Top 3
 
@@ -412,7 +415,7 @@ school_dist_shp %>%
 # ENROLLMENT
 # The top 3 largest school districts are 31, 2, and 24 with 61,838, 57,900, 54,197 people enrolled respectively.
 # Of these, only district 24 has a poverty percentage of greater than 70% and the other 2 has less than 60% in poverty. 
-# District 2 has the largest number of open schools of all districts and has 8 SBHCs serving 34 schools. District 31 and 24
+# District 2 has the largest number of open schools of all districts and has 8 SBHCs serving 34 schools out of 133. District 31 and 24
 # have 4 and 2 SBHCs respectively, both serving only 7 schools out of 87 and 69 respectively.
 
 school_dist_shp %>%
@@ -440,6 +443,10 @@ school_dist_shp %>%
 lmtest = lm(num_sbhc~total_enrollment + num_open_schools + percent_poverty + percent_asthma, data = school_dist_shp) #Create the linear regression
 summary(lmtest) #Review the results
 
-# MOST SBHC Traits?
+# Areas with highest density of SBHCs/10k students
+sbhcper10 <- school_dist_shp %>%
+  filter(sbhc10k >= 1.9985669)
 
+# Of the 11 districts with high densities of SBHCs per 10k students, only districts 15 and 3 have less than 78% students in poverty,
+# with 54% and 49% respectively. They also have the some of the lowest reported asthma rates when compared to the other 9 districts.
   

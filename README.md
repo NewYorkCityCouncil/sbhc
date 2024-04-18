@@ -13,7 +13,8 @@ An associated webpage for this analysis can be found [on the council website](ht
 - [2022-2023 School-Level Enrollment Data](https://data.cityofnewyork.us/Education/2017-18-2021-22-Demographic-Snapshot/c7ru-d68s/about_data)
 - [2024 School Locations/Information](data/input/Schooldata_24.csv)
 - [School Districts Shapefile](https://data.cityofnewyork.us/api/geospatial/r8nu-ymqj?method=export&format=Shapefile)
-- [2021-2022 LL12 School Disease Statistics](https://github.com/NewYorkCityCouncil/sbhc/blob/main/data/input/Local%20Law%2012%20School%20Year%202021-22.xlsx)
+- 2021-2022 LL12 School Disease Statistics - Local Law 12 of 2016, on file with the City Council
+- [DOE’s Demographic Snapshot Dataset](https://data.cityofnewyork.us/Education/2017-18-2021-22-Demographic-Snapshot/c7ru-d68s/about_data)
 
 
 #### Methodology 
@@ -26,6 +27,10 @@ The data team examined student health reports submitted to the Council along wit
 
 #### Main Takeaways
 
+- School Districts 9 and 10 in the Bronx stand out as the two districts with the highest number of school-based health centers.
+- When comparing the student asthma rate, the citywide rate is slightly lower than (14.10%) to those of school districts (14.28%) with SBHCs and those without (12.48%), where the rates are nearly the same.
+- The number of school based health centers per 10,000 students appears to be linked with certain health and social indicators such as poverty, asthma, type 1 diabetes, type 2 diabetes, and severe allergic reactions.
+- Despite a positive trend between SBHCs & asthma, school districts 15 & 3 stand out with fewer students in poverty and lower asthma rates compared to other districts with a high number of SBHCs.
 
 #### Recommendations
 
