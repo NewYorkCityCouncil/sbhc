@@ -1,5 +1,6 @@
 library(ggpubr)
 library(htmlwidgets)
+
 # run 01_prepare-data.R first - need school_dist_shp
 source("code/01_prepare-data.R")
 
@@ -13,12 +14,6 @@ school_dist_shp <-
 rm(ll12_21)
 rm(ll12_21_merge)
 
-# # filter map 
-# map_sf <- map_sf %>%
-#   filter(is.na(campus_name))
-
-#st_crs(school_dist_shp) = 4326
-
 # ---- Poverty x Total SBHCs ----
 
 p_map <- ggplot(NULL) + 
@@ -30,20 +25,14 @@ p_map <- ggplot(NULL) +
                 alpha = .2, 
                 size =2,
                 color = "navy") +
-  # geom_point(data = map_sf, # add schools
-  #            aes(x = longitude, y = latitude,
-  #                col="grey", alpha = 0.2)) + 
   scale_fill_distiller(direction = 1,
                        breaks = 0.1*0:10,
                        labels = percent(0.1*0:10)) +
   theme_nycc() + 
-  theme(axis.line=element_blank(),
-        axis.text.x=element_blank(),
-        axis.text.y=element_blank()) +
+  theme(axis.line=element_blank(), axis.text.x=element_blank(), axis.text.y=element_blank()) +
   labs(fill = "Percent Poverty",
        x = NULL,
        y = NULL) 
-
 
 p_plot <- ggplot(school_dist_shp, 
        aes(x = percent_poverty, y = num_sbhcs/(total_enrollment/10000), color = percent_poverty,
@@ -55,10 +44,8 @@ p_plot <- ggplot(school_dist_shp,
                                               "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "Poverty: ", round(percent_poverty*100,0), "%"))) + 
   scale_color_distiller(direction = 1) +
-  guides(color="none")+
-  # scale_y_log10() + 
+  guides(color="none") +
   scale_x_continuous(labels = scales::percent) +
-  # theme_minimal(base_size = 12) + 
   theme_nycc() +
   labs(color = "Percent Poverty",
        x = "Percent Poverty",
@@ -72,10 +59,8 @@ map_plot <- girafe(ggobj = p_plot + p_map, width_svg = 10, height_svg = 5.5)  %>
                  opts_tooltip(
                    opacity = 0.8,
                    css = "background-color:#4c6061; color:white; padding:10px; border-radius:5px;"),
-                 #opts_hover_inv(css = "stroke-width: 1;opacity:0.6;"),
-                 #opts_hover(css = "stroke-width: 4; opacity: 1; color:orange"),
-                 opts_toolbar(pngname = "poverty_correlation")
-  )
+                 opts_toolbar(pngname = "poverty_correlation"))
+
 map_plot %>%
   saveWidget(file = "visuals/poverty-correlation-map_interactive.html")
 
@@ -90,16 +75,11 @@ a_map <- ggplot(NULL) +
                 alpha = .2, 
                 size =2,
                 color = "navy") +
-  # geom_point(data = map_sf, # add schools
-  #            aes(x = longitude, y = latitude,
-  #                col="grey", alpha = 0.2)) + 
   scale_fill_distiller(direction = 1,
                        breaks = 0.1*0:10,
                        labels = percent(0.1*0:10)) +
   theme_nycc() + 
-  theme(axis.line=element_blank(),
-        axis.text.x=element_blank(),
-        axis.text.y=element_blank()) +
+  theme(axis.line=element_blank(), axis.text.x=element_blank(), axis.text.y=element_blank()) +
   labs(fill = "Percent Asthma",
        x = NULL,
        y = NULL) 
@@ -114,10 +94,8 @@ a_plot <- ggplot(school_dist_shp,
                                               "Total Enrollment: ", formatC(total_enrollment, format="f", big.mark=",", digits=0), "<br>",
                                               "Asthma: ", round(percent_asthma*100,0), "%"))) + 
   scale_color_distiller(direction = 1) +
-  guides(color="none")+
-  # scale_y_log10() + 
+  guides(color="none") +
   scale_x_continuous(labels = scales::percent) +
-  # theme_minimal(base_size = 12) + 
   theme_nycc() +
   labs(color = "Percent Asthma",
        x = "Percent Asthma",
@@ -131,16 +109,13 @@ map_plot <- girafe(ggobj = a_plot + a_map, width_svg = 10, height_svg = 5.5)  %>
                  opts_tooltip(
                    opacity = 0.8,
                    css = "background-color:#4c6061; color:white; padding:10px; border-radius:5px;"),
-                 #opts_hover_inv(css = "stroke-width: 1;opacity:0.6;"),
-                 #opts_hover(css = "stroke-width: 4; opacity: 1; color:orange"),
                  opts_toolbar(pngname = "asthma_correlation")
   )
 
-# htmltools::save_html(map_plot, "visuals/asthma-correlation-map_interactive.html")
 map_plot %>%
   saveWidget(file = "visuals/asthma-correlation-map_interactive.html")
 
-# Diabetes 1 x SBHCs
+# ---- Diabetes 1 x SBHCs ----
 
 d1_map <- ggplot(NULL) + 
   geom_sf_interactive(data = school_dist_shp, size = 0.1, 
@@ -155,9 +130,7 @@ d1_map <- ggplot(NULL) +
                        breaks = 0.001*0:5,
                        labels = percent(0.001*0:5)) +
   theme_nycc() + 
-  theme(axis.line=element_blank(),
-        axis.text.x=element_blank(),
-        axis.text.y=element_blank()) +
+  theme(axis.line=element_blank(), axis.text.x=element_blank(), axis.text.y=element_blank()) +
   labs(fill = "Percent Diabetes 1",
        x = NULL,
        y = NULL) 
@@ -193,7 +166,7 @@ map_plot <- girafe(ggobj = d1_plot + d1_map, width_svg = 10, height_svg = 5.5)  
 map_plot %>%
   saveWidget(file = "visuals/diabetes1-correlation-map_interactive.html")
 
-# Diabetes 2 x SBHCs
+# ---- Diabetes 2 x SBHCs ----
 
 d2_map <- ggplot(NULL) + 
   geom_sf_interactive(data = school_dist_shp, size = 0.1, 
@@ -208,9 +181,7 @@ d2_map <- ggplot(NULL) +
                        breaks = 0.0005*0:5,
                        labels = percent(0.0005*0:5)) +
   theme_nycc() + 
-  theme(axis.line=element_blank(),
-        axis.text.x=element_blank(),
-        axis.text.y=element_blank()) +
+  theme(axis.line=element_blank(), axis.text.x=element_blank(), axis.text.y=element_blank()) +
   labs(fill = "Percent Diabetes 2",
        x = NULL,
        y = NULL) 
@@ -246,7 +217,7 @@ map_plot <- girafe(ggobj = d2_plot + d2_map, width_svg = 10, height_svg = 5.5)  
 map_plot %>%
   saveWidget(file = "visuals/diabetes2-correlation-map_interactive.html")
 
-# Anaphylaxis x SBHCs
+# ---- Anaphylaxis x SBHCs ---- 
 
 an_map <- ggplot(NULL) + 
   geom_sf_interactive(data = school_dist_shp, size = 0.1, 
@@ -261,9 +232,7 @@ an_map <- ggplot(NULL) +
                        breaks = 0.01*0:10,
                        labels = percent(0.01*0:10)) +
   theme_nycc() + 
-  theme(axis.line=element_blank(),
-        axis.text.x=element_blank(),
-        axis.text.y=element_blank()) +
+  theme(axis.line=element_blank(), axis.text.x=element_blank(), axis.text.y=element_blank()) +
   labs(fill = "Percent Anaphylaxis",
        x = NULL,
        y = NULL) 
@@ -298,4 +267,3 @@ map_plot <- girafe(ggobj = an_plot + an_map, width_svg = 10, height_svg = 5.5)  
 
 map_plot %>%
   saveWidget(file = "visuals/anaphylaxis-correlation-map_interactive.html")
-

@@ -13,7 +13,7 @@ library(sf)
 library(janitor)
 
 # ---- load data ----
-health_data <- read.csv("../data/input/health_master_2122.csv") %>% clean_names() # copy pasted 2021-2022 LL12, DOE, data by school dist
+health_data <- read.csv("../data/input/health_master_2122.csv") %>% clean_names() # removed from github repo because contained ll12 data
 # append vaccination info from OpenData
 vax <- vroom::vroom("https://data.cityofnewyork.us/resource/ne9b-qgmm.csv?$limit=999999999")
 # ---- clean data ----
